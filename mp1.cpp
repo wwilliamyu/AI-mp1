@@ -60,24 +60,30 @@ int main(int argc, char** args) {
 	ifstream myfile(args[2]);
 
 	string line;
-	vector< vector<Cell> > Maze;
+	vector< vector<cell> > Maze;
 	int i = 0;
 	// get maze dimensions
 	while (getline(myfile, line)) {
 
 		// for each element in the line
-		for (int j = 0; j < line.size(); j++) {
+		for (size_t j = 0; j < line.size(); j++) {
 
-			case (line[j]) {
-				'%':
+			switch (line[j]) {
+				case '%':
 					Maze[i][j].wall = true;
+					break;
 
-				' ':
+				case ' ':
 					Maze[i][j].wall = false;
-				'.': 
+					break;
+				case '.': 
 					Maze[i][j].start = true;
-				'P':
+					break;
+				case 'P':
 					Maze[i][j].end = true;
+					break;
+				default:
+					break;
 			}
 		}
 		i++;
