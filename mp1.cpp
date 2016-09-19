@@ -5,6 +5,9 @@
 #include <stack>
 #include <algorithm>
 #include <fstream>
+#include <sstream>
+#include <stdio.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -46,8 +49,7 @@ int main(int argc, char** args) {
 	// args[1] = character for what search you want
 	// args[2] = the file we want to operate on
 
-	ofstream myfile;
-	myfile.open(args[2]);
+	ifstream myfile(args[2]);
 
 	string line;
 	int num_rows = 0;
@@ -55,14 +57,19 @@ int main(int argc, char** args) {
 
 	// get maze dimensions
 	while (getline(myfile, line)) {
-		num_rows = line.size();
-		num_cols++;
+		num_cols = line.size();
+		num_rows++;
 	}
-	
-	// declare the Maze
-	cell Maze[num_rows][num_cols];
 
+	cell Maze = new cell[num_rows][num_cols];
 
+	// for every line
+	for (int i = 0; i < num_rows; i++) {
+		// for every char in line
+		for (int j = 0; j < num_cols; j++) {
+			
+		}
+	}
 
 	myfile.close();
 	return 0;
