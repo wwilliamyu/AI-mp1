@@ -31,35 +31,17 @@ struct cell {
 			goal_order(-1) {}
 };
 
-struct maze {
-	int rows;
-	int cols;
+// struct node {
+// 	node* parent;
 
-	cell* start;
-	cell* end;
-};
-
-struct node {
-	node* parent;
-
-	node* childA;
-	node* childB;
-	node* childC;
-	node* childD;
-};
+// 	node* childA;
+// 	node* childB;
+// 	node* childC;
+// 	node* childD;
+// };
 
 int main(int argc, char** args) {
 
-	// if command is not 3 args
-	if (argc != 3) {
-		cout<< "Error, usage: ./mp1 [search flag] [maze file name]" <<endl;
-		return 1;
-	}
-	
-	// the character indicates what search mode we want to use on the file
-	char search_mode = args[1][0];
-
-	
 
 	
 }
