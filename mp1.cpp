@@ -4,6 +4,7 @@
 #include <queue>
 #include <stack>
 #include <algorithm>
+#include <fstream>
 
 using namespace std;
 
@@ -42,6 +43,29 @@ struct cell {
 
 int main(int argc, char** args) {
 
+	// args[1] = character for what search you want
+	// args[2] = the file we want to operate on
+
+	ofstream myfile;
+	myfile.open(args[2]);
+
+	string line;
+	int num_rows = 0;
+	int num_cols = 0;
+
+	// get maze dimensions
+	while (getline(myfile, line)) {
+		num_rows = line.size();
+		num_cols++;
+	}
+	
+	// declare the Maze
+	cell Maze[num_rows][num_cols];
+
+
+
+	myfile.close();
+	return 0;
 
 	
 }
