@@ -16,8 +16,13 @@ struct cell {
 	public:
 		bool wall;
 		bool visited;
+
+		// start point, end point
+		bool start;
+		bool end;
 		cell* previous;
 		
+		// do we need this
 		int x;
 		int y;
 	
@@ -27,8 +32,11 @@ struct cell {
 		int total_cost;
 		int goal_order;
 
+
 		cell() : 
-			visited(false), 
+			visited(false),
+			start(false),
+			end(false),
 			previous(NULL), 
 			manhattan_dist(0), 
 			step_cost(0), 
@@ -52,23 +60,28 @@ int main(int argc, char** args) {
 	ifstream myfile(args[2]);
 
 	string line;
-	int num_rows = 0;
-	int num_cols = 0;
-
+	vector< vector<Cell> > Maze;
+	int i = 0;
 	// get maze dimensions
 	while (getline(myfile, line)) {
-		num_cols = line.size();
-		num_rows++;
-	}
 
-	cell Maze = new cell[num_rows][num_cols];
+		// for each element in the line
+		for (int j = 0; j < line.size(); j++) {
 
-	// for every line
-	for (int i = 0; i < num_rows; i++) {
-		// for every char in line
-		for (int j = 0; j < num_cols; j++) {
-			
+			case (line[j]) {
+				'%':
+					Maze[i][j].wall = true;
+
+				' ':
+					Maze[i][j].wall = false;
+				'.': 
+					Maze[i][j].start = true;
+				'P':
+					Maze[i][j].end = true;
+			}
 		}
+		i++;
+
 	}
 
 	myfile.close();
