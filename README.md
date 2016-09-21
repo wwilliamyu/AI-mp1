@@ -1,10 +1,10 @@
 # AI-mp1
 
-Make on Mac:
-<p style="color:blue">make mp1</p>
+##Make on Mac:
+###make mp1
 
-Run in terminal
-<p style="color:blue">./mp1 [mode][mazefile]</p>
+##Run in terminal
+###./mp1 [mode][mazefile]
 
 Breadth-first search (BFS)
 Depth-first search (DFS)
