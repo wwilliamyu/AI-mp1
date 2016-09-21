@@ -10,8 +10,8 @@
 #include <stdlib.h>
 
 // our own header files
-#include <"bfs.h">
-#include <"dfs.h">
+#include "bfs.h"
+#include "dfs.h"
 
 using namespace std;
 
@@ -47,44 +47,37 @@ struct cell {
 			goal_order(-1) {}
 };
 
-// struct node {
-// 	node* parent;
 
-// 	node* childA;
-// 	node* childB;
-// 	node* childC;
-// 	node* childD;
-// };
-
+/**
+* Main function to run all three algorithms
+// args[1] = character for what search you want
+// args[2] = the file we want to operate on
+*/
 int main(int argc, char** args) {
+	
+	ifstream mazefile(args[2]);
 
-	// args[1] = character for what search you want
-	// args[2] = the file we want to operate on
 
-	ifstream myfile(args[2]);
-
-	string line;
-	vector< vector<cell> > Maze;
 	int i = 0;
 	// get maze dimensions
-	while (getline(myfile, line)) {
-
+	while (getline(mazefile, line)) {
+		cout << line <<'\n';
 		// for each element in the line
 		for (size_t j = 0; j < line.size(); j++) {
 
 			switch (line[j]) {
 				case '%':
-					Maze[i][j].wall = true;
+					// Maze[i][j].wall = true;
 					break;
 
 				case ' ':
-					Maze[i][j].wall = false;
+					// Maze[i][j].wall = false;
 					break;
 				case '.': 
-					Maze[i][j].start = true;
+					// Maze[i][j].start = true;
 					break;
 				case 'P':
-					Maze[i][j].end = true;
+					// Maze[i][j].end = true;
 					break;
 				default:
 					break;
