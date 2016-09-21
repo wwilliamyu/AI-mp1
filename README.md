@@ -1,10 +1,10 @@
 # AI-mp1
 
 Make on Mac:
-make mp1
+'make mp1'
 
 Run
-./mp1 [mode][mazefile]
+'./mp1 [mode][mazefile]'
 
 Breadth-first search (BFS)
 Depth-first search (DFS)
