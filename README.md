@@ -6,7 +6,7 @@
 ##Run in terminal
 ###./mp1 [mode][mazefile]
 
-Breadth-first search (BFS)
-Depth-first search (DFS)
-Greedy best-first search
-A* search
+##b - Breadth-first search (BFS)
+##d - Depth-first search (DFS)
+##g - Greedy best-first search
+##a - A* search
