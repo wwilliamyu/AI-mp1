@@ -15,7 +15,7 @@
 
 using namespace std;
 
-struct cell {
+class cell {
 	
 	public:
 		bool wall;
@@ -35,6 +35,7 @@ struct cell {
 		int step_cost;
 		int total_cost;
 		int goal_order;
+		char curChar;
 
 
 		cell() : 
@@ -44,7 +45,8 @@ struct cell {
 			previous(NULL), 
 			manhattan_dist(0), 
 			step_cost(0), 
-			goal_order(-1) {}
+			goal_order(-1),
+			curChar('?'){}
 };
 
 
@@ -56,38 +58,49 @@ struct cell {
 int main(int argc, char** args) {
 	
 	ifstream mazefile(args[2]);
-
-
-	int i = 0;
-	// get maze dimensions
+	vector< vector<cell> > Maze;
+	string line;
 	while (getline(mazefile, line)) {
 		cout << line <<'\n';
+		vector <cell> curLineofCells;
 		// for each element in the line
-		for (size_t j = 0; j < line.size(); j++) {
-
-			switch (line[j]) {
+		for (int i = 0; i < line.size(); i++) {
+			cell curCell;
+			switch (line[i]) {
 				case '%':
-					// Maze[i][j].wall = true;
+					curCell.wall = true; 
+					curCell.curChar = '%';
+					curLineofCells.push_back(curCell);
 					break;
-
 				case ' ':
-					// Maze[i][j].wall = false;
+					curCell.curChar = ' ';
+					curLineofCells.push_back(curCell);
 					break;
 				case '.': 
-					// Maze[i][j].start = true;
+					curCell.curChar = '.';
+					curLineofCells.push_back(curCell);
 					break;
 				case 'P':
-					// Maze[i][j].end = true;
+					curCell.curChar = 'P';
+					curLineofCells.push_back(curCell);
 					break;
 				default:
 					break;
 			}
 		}
-		i++;
-
+		Maze.push_back(curLineofCells);
+	}
+	cout << "the size of the maze is width x height: "<< Maze[0].size() << 'x' << Maze.size()<<'\n';
+	cout << "the maze constructed is: \n";
+	for (int i = 0; i<Maze.size(); i++){
+		for(int j=0; j<Maze[0].size(); j++) {
+			cout << Maze[i][j].curChar;
+		}
+		cout << '\n';
 	}
 
-	myfile.close();
+
+	mazefile.close();
 	return 0;
 
 	
