@@ -35,8 +35,7 @@ class cell {
 		int step_cost;
 		int total_cost;
 		int goal_order;
-		char curChar;
-
+		char curChar; 
 
 		cell() : 
 			visited(false),
@@ -45,15 +44,14 @@ class cell {
 			previous(NULL), 
 			manhattan_dist(0), 
 			step_cost(0), 
-			goal_order(-1),
-			curChar('?'){}
+			goal_order(-1){}
 };
 
 
 /**
 * Main function to run all three algorithms
-// args[1] = character for what search you want
-// args[2] = the file we want to operate on
+* args[1] = character for what search you want
+* args[2] = the file we want to operate on
 */
 int main(int argc, char** args) {
 	
@@ -61,15 +59,14 @@ int main(int argc, char** args) {
 	vector< vector<cell> > Maze;
 	string line;
 	while (getline(mazefile, line)) {
-		cout << line <<'\n';
 		vector <cell> curLineofCells;
 		// for each element in the line
 		for (int i = 0; i < line.size(); i++) {
 			cell curCell;
 			switch (line[i]) {
 				case '%':
-					curCell.wall = true; 
 					curCell.curChar = '%';
+					curCell.wall = true; 
 					curLineofCells.push_back(curCell);
 					break;
 				case ' ':
@@ -78,10 +75,12 @@ int main(int argc, char** args) {
 					break;
 				case '.': 
 					curCell.curChar = '.';
+					curCell.end = true;
 					curLineofCells.push_back(curCell);
 					break;
 				case 'P':
 					curCell.curChar = 'P';
+					curCell.start = true;
 					curLineofCells.push_back(curCell);
 					break;
 				default:
@@ -98,10 +97,6 @@ int main(int argc, char** args) {
 		}
 		cout << '\n';
 	}
-
-
 	mazefile.close();
-	return 0;
-
-	
+	return 0;	
 }
