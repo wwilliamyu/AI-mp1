@@ -56,47 +56,58 @@ class cell {
 int main(int argc, char** args) {
 	
 	ifstream mazefile(args[2]);
-	vector< vector<cell> > Maze;
+	vector< vector<cell*> > Maze;
+	cell * P;
+	cell * dot;
 	string line;
+	int row = 0;
 	while (getline(mazefile, line)) {
-		vector <cell> curLineofCells;
+		vector <cell*> curLineofCells;
 		// for each element in the line
-		for (int i = 0; i < line.size(); i++) {
-			cell curCell;
-			switch (line[i]) {
+		for (int col = 0; col < line.size(); col++) {
+			cell* curCell = new cell;
+			curCell->x = col;
+			curCell->y = row;
+			switch (line[col]) {
 				case '%':
-					curCell.curChar = '%';
-					curCell.wall = true; 
+					curCell->curChar = '%';
+					curCell->wall = true; 
 					curLineofCells.push_back(curCell);
 					break;
 				case ' ':
-					curCell.curChar = ' ';
+					curCell->curChar = ' ';
 					curLineofCells.push_back(curCell);
 					break;
 				case '.': 
-					curCell.curChar = '.';
-					curCell.end = true;
+					curCell->curChar = '.';
+					curCell->end = true;
+					dot = curCell;
 					curLineofCells.push_back(curCell);
 					break;
 				case 'P':
-					curCell.curChar = 'P';
-					curCell.start = true;
+					curCell->curChar = 'P';
+					curCell->start = true;
+					P = curCell;
 					curLineofCells.push_back(curCell);
 					break;
 				default:
 					break;
 			}
 		}
+		row++;
 		Maze.push_back(curLineofCells);
 	}
 	cout << "the size of the maze is width x height: "<< Maze[0].size() << 'x' << Maze.size()<<'\n';
 	cout << "the maze constructed is: \n";
 	for (int i = 0; i<Maze.size(); i++){
 		for(int j=0; j<Maze[0].size(); j++) {
-			cout << Maze[i][j].curChar;
+			cout << Maze[i][j]->curChar;
 		}
 		cout << '\n';
 	}
 	mazefile.close();
-	return 0;	
+
+	cout << "The starting coordinate is [" <<P->y<<','<<P->x<<"]\n";
+	cout << "The ending coordinate is [" <<dot->y<<','<<dot->x<<"]\n";
+	return 0;
 }
