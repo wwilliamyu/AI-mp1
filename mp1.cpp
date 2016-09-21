@@ -9,6 +9,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// our own header files
+#include <bfs.h>
+#include <dfs.h>
+
 using namespace std;
 
 struct cell {
