@@ -1,7 +1,7 @@
 #include "dfs.h"
 #include "cell.h"
 
-int DFS()
+int DFS(cell * start, cell * end, vector< vector<cell*> > Maze)
 {
-    return 0;
+    stack<cell *> s;
 }

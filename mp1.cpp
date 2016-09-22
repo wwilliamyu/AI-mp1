@@ -79,13 +79,15 @@ int main(int argc, char** args) {
 	mazefile.close();
 	switch(args[1][0]){
 		case 'd':
+			cout<<"Calling Depth-First Search\n";
+			DFS(P, dot, Maze);
 			
 		case 'b':
 			cout<<"Calling Breadth-First Search\n";
 			BFS(P, dot, Maze);
-			cout<<"calling bfs\n";
-			BFS();
-		
+			break;
+		default:
+			break;
 	}
 	cout << "The starting coordinate is [" <<P->y<<','<<P->x<<"]\n";
 	cout << "The ending coordinate is [" <<dot->y<<','<<dot->x<<"]\n";

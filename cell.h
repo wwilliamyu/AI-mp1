@@ -25,8 +25,9 @@ class cell {
 
 		cell* parent;
 		cell* preCell;
-		
-		// do we need this
+
+		int distance;
+
 		int x;
 		int y;
 	
