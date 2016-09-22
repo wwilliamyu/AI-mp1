@@ -33,6 +33,8 @@ int main(int argc, char** args) {
 	string line;
 	int row = 0;
 	while (getline(mazefile, line)) {
+		if (line.size() == 1)
+			continue;
 		vector <cell*> curLineofCells;
 		// for each element in the line
 		for (int col = 0; col < line.size(); col++) {
@@ -70,6 +72,7 @@ int main(int argc, char** args) {
 	}
 	cout << "the size of the maze is width x height: "<< Maze[0].size() << 'x' << Maze.size()<<'\n';
 	cout << "the maze constructed is: \n";
+
 	for (int i = 0; i<Maze.size(); i++){
 		for(int j=0; j<Maze[0].size(); j++) {
 			cout << Maze[i][j]->curChar;
@@ -77,7 +80,6 @@ int main(int argc, char** args) {
 		cout << '\n';
 	}
 	mazefile.close();
-
 	cout << "The starting coordinate is [" <<P->y<<','<<P->x<<"]\n";
 	cout << "The ending coordinate is [" <<dot->y<<','<<dot->x<<"]\n";
 	GreedySearch::calculate_manhattan_distance(Maze, dot);

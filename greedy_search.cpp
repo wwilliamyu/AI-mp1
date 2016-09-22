@@ -21,10 +21,7 @@ void GreedySearch::greedy_single(vector< vector<cell*> > &Maze, cell* start, cel
 
 	while (!frontier.empty()){
 		curCell = frontier.top();
-		cout << "curCell is [" << curCell->y << ',' << curCell->x << "]\n";
-		cout << "frontier size is "<<frontier.size()<<'\n';
 		frontier.pop();
-		cout << "frontier size is "<<frontier.size()<<'\n';
 		if (curCell->x + 1 < Maze[0].size()) //if not at the right border, go right
 			GreedySearch::greedy_checkFrontier(frontier, Maze, curCell, Maze[curCell->y][curCell->x + 1]);
 		if (curCell->y + 1 < Maze.size()) //if not at the bottom border, the go down
@@ -43,7 +40,7 @@ void GreedySearch::greedy_single(vector< vector<cell*> > &Maze, cell* start, cel
 void GreedySearch::greedy_checkFrontier(priority_queue <cell*, vector<cell*>, shorterMantthanDist> &frontier, vector< vector<cell*> > &Maze, cell* preCell, cell* curCell) {
 	if (curCell->visited || curCell->wall)
 		return;
-	cout << "curCell to push to <frontier></frontier> is [" << curCell->y << ',' << curCell->x << "]\n";
+	// cout << "curCell to push to <frontier></frontier> is [" << curCell->y << ',' << curCell->x << "]\n";
 	curCell->preCell = preCell;
 	curCell->visited = true;
 	frontier.push(curCell);
@@ -51,6 +48,7 @@ void GreedySearch::greedy_checkFrontier(priority_queue <cell*, vector<cell*>, sh
 
 void GreedySearch::greedy_printResult(vector< vector<cell*> > &Maze, cell* start, cell* goal) {
 	cout << "printing the output maze with path: \n";
+	goal->curChar = '*';
 	for (int i = 0; i<Maze.size(); i++){
 		for(int j=0; j<Maze[0].size(); j++) {
 			cell * curCell = Maze[i][j];
