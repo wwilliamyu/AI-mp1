@@ -22,18 +22,19 @@ class cell {
 		// start point, end point
 		bool start;
 		bool end;
-		cell* previous;
+		cell* preCell;
 		
 		// do we need this
 		int x;
 		int y;
 	
 		double manhattan_dist;
+		char curChar; 
+
 		cell* nearest_goal;
 		int step_cost;
 		int total_cost;
 		int goal_order;
-		char curChar; 
 
 		cell() : 
 			visited(false),
@@ -44,6 +45,5 @@ class cell {
 			step_cost(0), 
 			goal_order(-1){}
 };
-
 
 #endif

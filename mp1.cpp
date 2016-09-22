@@ -79,8 +79,10 @@ int main(int argc, char** args) {
 		case 'd':
 			
 		case 'b':
-			cout<<"fasd";
+			cout<<"calling bfs\n";
 			BFS();
+		case '':
+		
 	}
 	cout << "The starting coordinate is [" <<P->y<<','<<P->x<<"]\n";
 	cout << "The ending coordinate is [" <<dot->y<<','<<dot->x<<"]\n";
