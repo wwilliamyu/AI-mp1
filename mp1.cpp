@@ -92,7 +92,7 @@ int main(int argc, char** args) {
 			
 		case 'b':
 			cout<<"Calling Breadth-First Search\n";
-			BFS(P, dot, Maze);
+			BreadthFS::BFS(P, dot, Maze);
 			break;
 		default:
 			break;

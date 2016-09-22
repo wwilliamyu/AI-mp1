@@ -16,6 +16,13 @@
 
 using namespace std;
 // This is the content of the .h file, which is where the declarations go
-int BFS(cell * start, cell * end, vector< vector<cell*> > Maze);
+
+namespace BreadthFS {
+
+	void BFS(cell* start, cell* end, vector< vector<cell*> >& Maze);
+
+	void BFS_expand(vector< vector<cell*> >& Maze, queue<cell*>& q, cell* parent, int new_x, int new_y);
+	
+}
 
 #endif
