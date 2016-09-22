@@ -1,5 +1,5 @@
 EXE = mp1
-OBJS = mp1.cpp bfs.o dfs.o
+OBJS = mp1.cpp bfs.o dfs.o astar.o
 
 COMPILER = g++
 COMPILER_OPTS = -c -g -std=c++11 -Wall -pedantic -Werror
@@ -15,6 +15,9 @@ bfs.o : bfs.h bfs.cpp
 
 dfs.o : dfs.h dfs.cpp
 	$(COMPILER) $(COMPILER_OPTS) dfs.cpp
+
+astar.o : astar.h astar.cpp
+	$(COMPILER) $(COMPILER_OPTS) astar.cpp
 	
 clean :
 	-rm -f *.o $(EXE)

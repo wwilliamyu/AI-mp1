@@ -1,3 +1,6 @@
+
+#ifndef CELL
+#define CELL
 #include <iostream>
 #include <string>
 #include <vector>
@@ -12,6 +15,7 @@
 // our own header files
 #include "bfs.h"
 #include "dfs.h"
+#include "astar.h"
 
 using namespace std;
 
@@ -97,6 +101,23 @@ int main(int argc, char** args) {
 		}
 		cout << '\n';
 	}
+
+	switch(argc){
+		case 'd':
+
+		case 'b':
+
+		case 'a':
+
+		case 'g':
+			int a =0;
+			a++;
+		
+	}
+
+
 	mazefile.close();
 	return 0;	
 }
+
+#endif
