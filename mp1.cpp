@@ -74,7 +74,8 @@ int main(int argc, char** args) {
 		case 'b':
 			cout<<"calling bfs\n";
 			BFS(Maze);
-
+		case 'a':
+			
 	}
 
 

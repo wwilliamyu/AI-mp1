@@ -14,6 +14,7 @@ class cell {
 		cell* previous;
 		
 		// do we need this
+		// yes, to caculate the mahattan distance// Guangzhe
 		int x;
 		int y;
 	
