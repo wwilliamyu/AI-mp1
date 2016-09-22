@@ -43,7 +43,8 @@ class cell {
 			visited(false),
 			start(false),
 			end(false),
-			previous(NULL), 
+			parent(NULL), 
+			distance(std::numeric_limits<int>::max()),
 			manhattan_dist(0), 
 			step_cost(0), 
 			goal_order(-1){}

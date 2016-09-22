@@ -16,7 +16,7 @@ bfs.o : bfs.h bfs.cpp
 dfs.o : dfs.h dfs.cpp
 	$(COMPILER) $(COMPILER_OPTS) dfs.cpp
 
-greedy.o : greedy.h greedy.cpp
+greedy.o : greedy_search.h greedy.cpp
 	$(COMPILER) $(COMPILER_OPTS) greedy.cpp
 	
 clean :

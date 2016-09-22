@@ -1,28 +1,30 @@
 #include "bfs.h"
 #include "cell.h"
 
+using namespace std;
+
 int BFS(cell * start, cell * end, vector< vector<cell*> > Maze)
 {
 	printf("%s\n", "BFS has started.");
 
-	for (int i = 0; i < Maze.size(); i++) {
-		for (int j = 0; j < Maze[i].size(); j++) {
-			// set distance to infinity
-			Maze[i][j]->distance = numeric_limits<int>::max();
-			Maze[i][j]-> parent = NULL;
-		}
+	queue<cell*> q;
 
-		queue<cell*> q;
+	start->distance = 0;
+	q.push(start);
 
-		start->distance = 0;
-		q.enqueue(start);
+	while (!q.empty()) {
+		cell * curr = q.front();
+		q.pop();
 
-		while (!q.empty) {
-			cell * curr = q.dequeue();
+		cell * k = curr; //placeholder
+		//for each node k that is adjacent to curr: {
+			if (k->distance == numeric_limits<int>::max()) {
+				k->distance = curr->distance + 1;
+				k->parent = curr;
+				q.push(k);
+			}
+		//}
 
-		}
 	}
-
-	printf("%s\n", "BFS has ended.");
     return 0;
 }
