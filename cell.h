@@ -1,6 +1,17 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <queue>
+#include <stack>
+#include <algorithm>
+#include <fstream>
+#include <sstream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
 #ifndef _CELL_H_
 #define _CELL_H_
-#include <iostream>
 
 class cell {
 	
@@ -11,14 +22,21 @@ class cell {
 		// start point, end point
 		bool start;
 		bool end;
+
 		cell* parent;
+		cell* preCell;
+		
+		// do we need this
+		int x;
+		int y;
 	
 		double manhattan_dist;
+		char curChar; 
+
 		cell* nearest_goal;
 		int step_cost;
 		int total_cost;
 		int goal_order;
-		char curChar; 
 
 		cell() : 
 			visited(false),
@@ -29,6 +47,5 @@ class cell {
 			step_cost(0), 
 			goal_order(-1){}
 };
-
 
 #endif
