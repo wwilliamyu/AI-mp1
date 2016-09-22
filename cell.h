@@ -11,11 +11,7 @@ class cell {
 		// start point, end point
 		bool start;
 		bool end;
-		cell* previous;
-		
-		// do we need this
-		int x;
-		int y;
+		cell* parent;
 	
 		double manhattan_dist;
 		cell* nearest_goal;

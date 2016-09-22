@@ -78,8 +78,8 @@ int main(int argc, char** args) {
 		case 'd':
 			
 		case 'b':
-			cout<<"calling bfs\n";
-			BFS();
+			cout<<"Calling Breadth-First Search\n";
+			BFS(P, dot, Maze);
 
 		
 	}
