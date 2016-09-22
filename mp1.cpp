@@ -13,7 +13,6 @@
 #include "bfs.h"
 #include "dfs.h"
 #include "cell.h"
-#include "greedy.h"
 
 using namespace std;
 
@@ -81,12 +80,12 @@ int main(int argc, char** args) {
 		case 'b':
 			cout<<"calling bfs\n";
 			BFS();
-		case '':
+
 		
 	}
 	cout << "The starting coordinate is [" <<P->y<<','<<P->x<<"]\n";
 	cout << "The ending coordinate is [" <<dot->y<<','<<dot->x<<"]\n";
-	calculate_manhattan_distance(dot, P);
+	// Greedy::calculate_manhattan_distance(dot, P);
 	cout << dot->manhattan_dist<<'\n';
 	return 0;
 }
