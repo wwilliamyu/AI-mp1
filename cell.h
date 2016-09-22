@@ -1,3 +1,5 @@
+#ifndef _CELL_H_
+#define _CELL_H_
 #include <iostream>
 #include <string>
 #include <vector>
@@ -9,9 +11,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
-#ifndef _CELL_H_
-#define _CELL_H_
 
 class cell {
 	
@@ -40,7 +39,7 @@ class cell {
 			visited(false),
 			start(false),
 			end(false),
-			previous(NULL), 
+			preCell(NULL), 
 			manhattan_dist(0), 
 			step_cost(0), 
 			goal_order(-1){}

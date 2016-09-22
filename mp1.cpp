@@ -77,6 +77,12 @@ int main(int argc, char** args) {
 		cout << '\n';
 	}
 	mazefile.close();
+
+	cout << "The starting coordinate is [" <<P->y<<','<<P->x<<"]\n";
+	cout << "The ending coordinate is [" <<dot->y<<','<<dot->x<<"]\n";
+	GreedySearch::calculate_manhattan_distance(Maze, dot);
+	GreedySearch::greedy_single(Maze, P, dot);
+
 	switch(args[1][0]){
 		case 'd':
 			
@@ -85,9 +91,5 @@ int main(int argc, char** args) {
 			BFS();
 		
 	}
-	cout << "The starting coordinate is [" <<P->y<<','<<P->x<<"]\n";
-	cout << "The ending coordinate is [" <<dot->y<<','<<dot->x<<"]\n";
-	GreedySearch::calculate_manhattan_distance(P, dot);
-	cout << P->manhattan_dist<<'\n';
 	return 0;
 }
