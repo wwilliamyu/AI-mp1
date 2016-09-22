@@ -10,9 +10,12 @@
 #include <stdlib.h>
 #include <math.h>
 // our own header files
+#include "cell.h"
 #include "bfs.h"
 #include "dfs.h"
-#include "cell.h"
+#include "greedy_search.h"
+
+
 
 using namespace std;
 
@@ -80,12 +83,11 @@ int main(int argc, char** args) {
 		case 'b':
 			cout<<"calling bfs\n";
 			BFS();
-
 		
 	}
 	cout << "The starting coordinate is [" <<P->y<<','<<P->x<<"]\n";
 	cout << "The ending coordinate is [" <<dot->y<<','<<dot->x<<"]\n";
-	// Greedy::calculate_manhattan_distance(dot, P);
-	cout << dot->manhattan_dist<<'\n';
+	GreedySearch::calculate_manhattan_distance(P, dot);
+	cout << P->manhattan_dist<<'\n';
 	return 0;
 }
