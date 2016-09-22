@@ -75,10 +75,16 @@ int main(int argc, char** args) {
 		cout << '\n';
 	}
 	mazefile.close();
-
+	switch(args[1][0]){
+		case 'd':
+			
+		case 'b':
+			cout<<"fasd";
+			BFS();
+	}
 	cout << "The starting coordinate is [" <<P->y<<','<<P->x<<"]\n";
 	cout << "The ending coordinate is [" <<dot->y<<','<<dot->x<<"]\n";
-	// Greedy::calculate_manhattan_distance(dot, P);
+	calculate_manhattan_distance(dot, P);
 	cout << dot->manhattan_dist<<'\n';
 	return 0;
 }
