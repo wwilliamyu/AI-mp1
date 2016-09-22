@@ -80,7 +80,7 @@ int main(int argc, char** args) {
 		case 'b':
 			cout<<"calling bfs\n";
 			BFS();
-		case '':
+
 		
 	}
 	cout << "The starting coordinate is [" <<P->y<<','<<P->x<<"]\n";
