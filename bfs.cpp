@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 #include <iostream>
 #include <string>
@@ -14,6 +15,7 @@
 #include "bfs.h"
 #include "dfs.h"
 #include "cell.h"
+
 int BFS()
 {
 	printf("%s\n", "dfa");
