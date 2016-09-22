@@ -21,7 +21,7 @@ using namespace std;
 * args[1] = character for what search you want
 * args[2] = the file we want to operate on
 */
-int main(int argc, char** args) {
+int main(string argc, char** args) {
 	
 	ifstream mazefile(args[2]);
 	vector< vector<cell*> > Maze;
@@ -74,7 +74,13 @@ int main(int argc, char** args) {
 		cout << '\n';
 	}
 	mazefile.close();
-
+	switch(argc){
+		case 'd':
+			
+		case 'b':
+			cout<<"fasd";
+			BFS();
+	}
 	cout << "The starting coordinate is [" <<P->y<<','<<P->x<<"]\n";
 	cout << "The ending coordinate is [" <<dot->y<<','<<dot->x<<"]\n";
 	// Greedy::calculate_manhattan_distance(dot, P);
