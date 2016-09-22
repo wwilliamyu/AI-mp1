@@ -13,6 +13,7 @@
 #include "bfs.h"
 #include "dfs.h"
 #include "cell.h"
+#include "greedy.h"
 
 using namespace std;
 

@@ -1,3 +1,15 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <queue>
+#include <stack>
+#include <algorithm>
+#include <fstream>
+#include <sstream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
 #ifndef _CELL_H_
 #define _CELL_H_
 
