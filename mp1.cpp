@@ -67,6 +67,17 @@ int main(int argc, char** args) {
 	}
 	cout << "the size of the maze is width x height: "<< Maze[0].size() << 'x' << Maze.size()<<'\n';
 	cout << "the maze constructed is: \n";
+
+	switch(args[1][0]){
+		case 'd':
+			
+		case 'b':
+			cout<<"calling bfs\n";
+			BFS(Maze);
+
+	}
+
+
 	for (int i = 0; i<Maze.size(); i++){
 		for(int j=0; j<Maze[0].size(); j++) {
 			cout << Maze[i][j]->curChar;
@@ -74,15 +85,6 @@ int main(int argc, char** args) {
 		cout << '\n';
 	}
 	mazefile.close();
-	switch(args[1][0]){
-		case 'd':
-			
-		case 'b':
-			cout<<"calling bfs\n";
-			BFS();
-		case '':
-		
-	}
 	cout << "The starting coordinate is [" <<P->y<<','<<P->x<<"]\n";
 	cout << "The ending coordinate is [" <<dot->y<<','<<dot->x<<"]\n";
 	// Greedy::calculate_manhattan_distance(dot, P);

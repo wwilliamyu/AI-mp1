@@ -13,10 +13,12 @@
 // our own header files
 #include "bfs.h"
 #include "dfs.h"
-#include "cell.h"
+	
 
-int BFS()
+
+int BFS(vector<vector<cell*> > & Maze)
 {
+	Maze[0][0]->curChar='S';
 	printf("%s\n", "bfs started");
     return 0;
 }
