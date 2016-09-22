@@ -21,7 +21,7 @@ using namespace std;
 * args[1] = character for what search you want
 * args[2] = the file we want to operate on
 */
-int main(string argc, char** args) {
+int main(int argc, char** args) {
 	
 	ifstream mazefile(args[2]);
 	vector< vector<cell*> > Maze;
@@ -74,12 +74,14 @@ int main(string argc, char** args) {
 		cout << '\n';
 	}
 	mazefile.close();
-	switch(argc){
+	switch(args[1][0]){
 		case 'd':
 			
 		case 'b':
-			cout<<"fasd";
+			cout<<"calling bfs\n";
 			BFS();
+		case '':
+		
 	}
 	cout << "The starting coordinate is [" <<P->y<<','<<P->x<<"]\n";
 	cout << "The ending coordinate is [" <<dot->y<<','<<dot->x<<"]\n";

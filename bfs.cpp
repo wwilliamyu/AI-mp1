@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 #include <iostream>
 #include <string>
@@ -18,6 +17,6 @@
 
 int BFS()
 {
-	printf("%s\n", "dfa");
+	printf("%s\n", "bfs started");
     return 0;
 }
