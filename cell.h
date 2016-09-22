@@ -21,9 +21,11 @@ class cell {
 		// start point, end point
 		bool start;
 		bool end;
+
 		cell* preCell;
-		
-		// do we need this
+
+		int distance;
+
 		int x;
 		int y;
 	
@@ -40,6 +42,7 @@ class cell {
 			start(false),
 			end(false),
 			preCell(NULL), 
+			distance(std::numeric_limits<int>::max()),
 			manhattan_dist(0), 
 			step_cost(0), 
 			goal_order(-1){}

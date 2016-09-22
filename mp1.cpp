@@ -85,11 +85,15 @@ int main(int argc, char** args) {
 
 	switch(args[1][0]){
 		case 'd':
+			cout<<"Calling Depth-First Search\n";
+			DFS(P, dot, Maze);
 			
 		case 'b':
-			cout<<"calling bfs\n";
-			BFS();
-		
+			cout<<"Calling Breadth-First Search\n";
+			BFS(P, dot, Maze);
+			break;
+		default:
+			break;
 	}
 	return 0;
 }
