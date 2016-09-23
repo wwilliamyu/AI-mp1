@@ -51,9 +51,6 @@ class cell {
 			step_cost(0), 
 			goal_order(-1){}
 
-		bool operator<(const cell &c1, const cell &c2){
-			
-		};
 };
 
 #endif
