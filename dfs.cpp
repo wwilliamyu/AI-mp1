@@ -27,7 +27,7 @@ void DepthFS::DFS(cell* start, cell* end, vector< vector<cell*> >& Maze) {
                 DFS_expand(Maze, s, curr, curr->x, curr->y + 1); // DOWN
             }
             if (curr->x - 1 >= 0) {
-                DFS_expand(Maze, s, curr, curr->x - 1, curr-> y); // LEFT
+                DFS_expand(Maze, s, curr, curr->x - 1, curr->y); // LEFT
             }
             if (curr->y - 1 >= 0) {
                 DFS_expand(Maze, s, curr, curr->x, curr->y - 1); // UP

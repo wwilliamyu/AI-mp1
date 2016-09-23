@@ -13,11 +13,12 @@ void BreadthFS::BFS(cell* start, cell* end, vector< vector<cell*> >& Maze)
 		curr = q.front();
 		q.pop();
 		curr->visited = true;
+
 		if (curr == end) {
 			break;
 			// at goal
 		}
-		
+
 		if (curr->x + 1 < Maze[0].size()) {
             BFS_expand(Maze, q, curr, curr->x + 1, curr->y); // RIGHT
         }
@@ -25,7 +26,7 @@ void BreadthFS::BFS(cell* start, cell* end, vector< vector<cell*> >& Maze)
             BFS_expand(Maze, q, curr, curr->x, curr->y + 1); // DOWN
         }
         if (curr->x - 1 >= 0) {
-            BFS_expand(Maze, q, curr, curr->x - 1, curr-> y); // LEFT
+            BFS_expand(Maze, q, curr, curr->x - 1, curr->y); // LEFT
         }
         if (curr->y - 1 >= 0) {
             BFS_expand(Maze, q, curr, curr->x, curr->y - 1); // UP
