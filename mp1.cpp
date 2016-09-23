@@ -83,6 +83,9 @@ int main(int argc, char** args) {
 	cout << "The starting coordinate is [" <<P->y<<','<<P->x<<"]\n";
 	cout << "The ending coordinate is [" <<dot->y<<','<<dot->x<<"]\n";
 
+	GreedySearch::calculate_manhattan_distance(Maze, dot);
+	GreedySearch::greedy_single(Maze, P, dot);
+
 	switch(args[1][0]){
 		case 'd':
 			cout<<"Calling Depth-First Search\n";

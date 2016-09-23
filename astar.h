@@ -1,8 +1,8 @@
 #ifndef ASTAR_H
 #define ASTAR_H
-#include "mp1.cpp"
+#include "cell.h"
 using namespace std;
 
-int A_STAR(	vector< vector<cell> > Maze);
-
+void astar(cell* start, cell* end, vector< vector<cell*> >& Maze);
+bool astar_recursive(cell* cur,vector<cell*> nodes,vector< vector<cell*> >& Maze)
 #endif

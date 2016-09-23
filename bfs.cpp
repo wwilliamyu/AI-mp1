@@ -1,4 +1,15 @@
 #include "bfs.h"
+<<<<<<< HEAD
+#include "dfs.h"
+	
+
+
+int BFS(vector<vector<cell*> > & Maze)
+{
+	Maze[0][0]->curChar='S';
+	printf("%s\n", "bfs started");
+    return 0;
+=======
 
 using namespace std;
 
@@ -43,4 +54,5 @@ void BreadthFS::BFS_expand(vector< vector<cell*> >& Maze, queue<cell*>& q, cell*
 		k->preCell = parent;
 		return;
 	}
+>>>>>>> d5e66327629a3389a4697a6018524d9afaf9be4c
 }

@@ -21,9 +21,12 @@ class cell {
 		// start point, end point
 		bool start;
 		bool end;
+		cell* previous;
+		
+		// do we need this
+		// yes, to caculate the mahattan distance// Guangzhe
 
 		cell* preCell;
-
 		int distance;
 
 		int x;
