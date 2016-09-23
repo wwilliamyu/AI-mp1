@@ -30,8 +30,6 @@ int main(int argc, char** args) {
 		cout << "Wrong input format. ./mp1 [algorithm] [input file path]. algorithm options are d,b,g,a\n";
 		return 1;
 	}
-
-
 	ifstream mazefile(args[2]);
 	vector< vector<cell*> > Maze;
 	cell * P;
@@ -91,7 +89,7 @@ int main(int argc, char** args) {
 	switch(args[1][0]){
 		case 'd':
 			cout<<"Calling Depth-First Search\n";
-			DFS(P, dot, Maze);
+			DepthFS::DFS(P, dot, Maze);
 			
 		case 'b':
 			cout<<"Calling Breadth-First Search\n";
