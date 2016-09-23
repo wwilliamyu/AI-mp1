@@ -4,32 +4,45 @@
 using namespace std;
 
 void Amul::amul(vector< vector<cell*> > &Maze, cell* start, cell*goal){
-	cell * curCell;
-	priority_queue <cell*, vector<cell*>, greaterEvaluation> frontier;
-	start->visited = true;
-	start->total_cost = 0;
-	frontier.push(start);
-	while (!frontier.empty()){
-		curCell = frontier.top();
-		frontier.pop();
-		if (curCell->x + 1 < Maze[0].size()) //if not at the right border, go right
-			AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y][curCell->x + 1]);
-		if (curCell->y + 1 < Maze.size()) //if not at the bottom border, the go down
-			AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y + 1][curCell->x]);
-		if (curCell->x -1 >= 0) //if not at the left border, go left
-			AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y][curCell->x - 1]);
-		if (curCell->y - 1 >= 0) //if not at the top border, the go up
-			AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y - 1][curCell->x]);
+	//First we caculate the path cost for every possible connections in between the dots
+	//Second we try every combinations of the dots using a heuristic approach
+	//Heuristic approach:
+	//F=(A*_cost(traveled)+Mahhantan distance(to the closest goal))
+	/*while(!goallist.empty())
+	{
+		look for the next with least F
 
-		//reached a dot, then remove from the goal list
-		if (curCell == goal)
-		{
-
-		}
-			
 	}
-	AStar::astar_generatePath(goal);
-	AStar::astar_printResult(Maze, start, goal);
+	*/
+
+
+
+	// cell * curCell;
+	// priority_queue <cell*, vector<cell*>, greaterEvaluation> frontier;
+	// start->visited = true;
+	// start->total_cost = 0;
+	// frontier.push(start);
+	// while (!frontier.empty()){
+	// 	curCell = frontier.top();
+	// 	frontier.pop();
+	// 	if (curCell->x + 1 < Maze[0].size()) //if not at the right border, go right
+	// 		AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y][curCell->x + 1]);
+	// 	if (curCell->y + 1 < Maze.size()) //if not at the bottom border, the go down
+	// 		AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y + 1][curCell->x]);
+	// 	if (curCell->x -1 >= 0) //if not at the left border, go left
+	// 		AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y][curCell->x - 1]);
+	// 	if (curCell->y - 1 >= 0) //if not at the top border, the go up
+	// 		AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y - 1][curCell->x]);
+
+	// 	//reached a dot, then remove from the goal list
+	// 	if (curCell == goal)
+	// 	{
+
+	// 	}
+			
+	// }
+	// AStar::astar_generatePath(goal);
+	// AStar::astar_printResult(Maze, start, goal);
 }
 
 
