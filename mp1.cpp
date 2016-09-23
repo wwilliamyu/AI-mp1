@@ -95,6 +95,10 @@ int main(int argc, char** args) {
 			cout<<"Calling Breadth-First Search\n";
 			BreadthFS::BFS(P, dot, Maze);
 			break;
+		case 'g':
+			cout<<"Greedy Best-First Algorithm for single dot\n";
+			GreedySearch::calculate_manhattan_distance(Maze, dot);
+			GreedySearch::greedy_single(Maze, P, dot);
 		default:
 			break;
 	}
