@@ -54,6 +54,7 @@ int main(int argc, char** args) {
 					break;
 				case ' ':
 					curCell->curChar = ' ';
+					curCell->wall = false;
 					curLineofCells.push_back(curCell);
 					break;
 				case '.': 
@@ -92,10 +93,12 @@ int main(int argc, char** args) {
 		case 'd':
 			cout<<"Calling Depth-First Search\n";
 			DepthFS::DFS(P, dot, Maze);
-			
+			GreedySearch::greedy_printResult(Maze, P, dot);
+			break;
 		case 'b':
 			cout<<"Calling Breadth-First Search\n";
 			BreadthFS::BFS(P, dot, Maze);
+			GreedySearch::greedy_printResult(Maze, P, dot);
 			break;
 		case 'g':
 			cout<<"Runing Greedy Best-First Algorithm for single dot\n";

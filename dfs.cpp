@@ -3,52 +3,48 @@
 using namespace std;
 
 void DepthFS::DFS(cell* start, cell* end, vector< vector<cell*> >& Maze) {
+    
     stack< cell* > s;
     cell* curr;
+
     s.push(start);
 
     while (!s.empty()) {
         curr = s.top();
         s.pop();
-
         if (curr == end) {
             break;
             // at goal
         }
-
         if (!curr->visited) {
-            //cout << "iteration" << endl;
             curr->visited = true;
-
-            if (curr->x + 1 < Maze[0].size()) {
-                DFS_expand(Maze, s, curr, curr->x + 1, curr->y); // RIGHT
+            if (curr->x + 1 < Maze[0].size() && Maze[curr->y][curr->x + 1]->wall != true) {
+                DFS_expand(Maze, s, curr, Maze[curr->y][curr->x + 1]); // RIGHT
             }
-            if (curr->y + 1 < Maze.size()) {
-                DFS_expand(Maze, s, curr, curr->x, curr->y + 1); // DOWN
+            if (curr->y + 1 < Maze.size() && Maze[curr->y + 1][curr->x]->wall != true) {
+                DFS_expand(Maze, s, curr, Maze[curr->y + 1][curr->x]); // DOWN
             }
-            if (curr->x - 1 >= 0) {
-                DFS_expand(Maze, s, curr, curr->x - 1, curr->y); // LEFT
+            if (curr->x - 1 >= 0 && Maze[curr->y][curr->x - 1]->wall != true) {
+                DFS_expand(Maze, s, curr, Maze[curr->y][curr->x - 1]); // LEFT
             }
-            if (curr->y - 1 >= 0) {
-                DFS_expand(Maze, s, curr, curr->x, curr->y - 1); // UP
+            if (curr->y - 1 >= 0 && Maze[curr->y - 1][curr->x]->wall != true) {
+                DFS_expand(Maze, s, curr, Maze[curr->y - 1][curr->x]); // UP
             }
-            
         }
+    }
+    cell * curCell = end;
+    while (curCell->preCell != NULL) {
+        curCell->curChar = '*';
+        curCell = curCell->preCell;
     }
 }
 
-void DepthFS::DFS_expand(vector< vector<cell*> >& Maze, stack<cell*>& s, cell* parent, int new_x, int new_y) {
+void DepthFS::DFS_expand(vector< vector<cell*> >& Maze, stack<cell*>& s, cell* curr, cell* new_cell) {
+
     // FOUR NODES ONLY
-
-    // if outside of the maze
-
-    cell* k = Maze[new_x][new_y];
-    if (k->visited == true || k->wall == true) {
-        return;
+    if (!new_cell->wall && !new_cell->visited) {
+        new_cell->preCell = curr;
+        s.push(new_cell);
     }
-    else {
-        s.push(k);
-        k->preCell = parent;
-        return;
-    }
+    return;
 }

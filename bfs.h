@@ -20,7 +20,7 @@ namespace BreadthFS {
 
 	void BFS(cell* start, cell* end, vector< vector<cell*> >& Maze);
 
-	void BFS_expand(vector< vector<cell*> >& Maze, queue<cell*>& q, cell* parent, int new_x, int new_y);
+	void BFS_expand(vector< vector<cell*> >& Maze, queue<cell*>& q, cell* curr, cell* new_cell);
 	
 }
 
