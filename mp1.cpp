@@ -25,6 +25,11 @@ using namespace std;
 * args[2] = the file we want to operate on
 */
 int main(int argc, char** args) {
+
+	if (argc != 3) {
+		cout<< "ERROR 69: please follow this format -> ./mp1 [search flag] [maze file name]" <<endl;
+		return 1;
+	}
 	
 	ifstream mazefile(args[2]);
 	vector< vector<cell*> > Maze;
@@ -88,7 +93,7 @@ int main(int argc, char** args) {
 	switch(args[1][0]){
 		case 'd':
 			cout<<"Calling Depth-First Search\n";
-			DFS(P, dot, Maze);
+			DepthFS::DFS(P, dot, Maze);
 			
 		case 'b':
 			cout<<"Calling Breadth-First Search\n";
