@@ -15,7 +15,7 @@ void GreedySearch::calculate_manhattan_distance(vector< vector<cell*> > &Maze, c
 
 void GreedySearch::greedy_single(vector< vector<cell*> > &Maze, cell* start, cell*goal) {
 	cell * curCell;
-	priority_queue <cell*, vector<cell*>, shorterMantthanDist> frontier;
+	priority_queue <cell*, vector<cell*>, greaterManhattanDist> frontier;
 	start->visited = true;
 	frontier.push(start);
 
@@ -34,10 +34,9 @@ void GreedySearch::greedy_single(vector< vector<cell*> > &Maze, cell* start, cel
 			break;
 	}
 	GreedySearch::greedy_generatePath(goal);
-	GreedySearch::greedy_printResult(Maze, start, goal);
 }
 
-void GreedySearch::greedy_checkFrontier(priority_queue <cell*, vector<cell*>, shorterMantthanDist> &frontier, vector< vector<cell*> > &Maze, cell* preCell, cell* curCell) {
+void GreedySearch::greedy_checkFrontier(priority_queue <cell*, vector<cell*>, greaterManhattanDist> &frontier, vector< vector<cell*> > &Maze, cell* preCell, cell* curCell) {
 	if (curCell->visited || curCell->wall)
 		return;
 	// cout << "curCell to push to <frontier></frontier> is [" << curCell->y << ',' << curCell->x << "]\n";
@@ -48,7 +47,17 @@ void GreedySearch::greedy_checkFrontier(priority_queue <cell*, vector<cell*>, sh
 }
 
 void GreedySearch::greedy_printResult(vector< vector<cell*> > &Maze, cell* start, cell* goal) {
-	cout << "printing the output maze with path: \n";
+	// ofstream myfile ("example.txt");
+ //  if (myfile.is_open())
+ //  {
+ //    myfile << "This is a line.\n";
+ //    myfile << "This is another line.\n";
+ //    myfile.close();
+ //  }else{
+ //  	cout << "Unable to open file";
+ //  	return;
+ //  } 
+	cout << "printing the output maze of greedy search with path: \n";
 	goal->curChar = '*';
 	int pathCost = 0;
 	for (int i = 0; i<Maze.size(); i++){

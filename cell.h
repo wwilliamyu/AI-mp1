@@ -26,18 +26,18 @@ class cell {
 		// do we need this
 		// yes, to caculate the mahattan distance// Guangzhe
 
-		cell* preCell;
+		cell* preCell; //previous cell expanded where the current cell reached from
 		int distance;
 
 		int x;
-		int y;
+		int y; 
 	
-		double manhattan_dist;
-		char curChar; 
+		double manhattan_dist; //the manhattan distance between this cell and the goal
+		char curChar; //the character of this cell
 
 		cell* nearest_goal;
+		int total_cost; //the total cost from the starting cell to the current cell
 		int step_cost;
-		int total_cost;
 		int goal_order;
 
 		cell() : 
@@ -47,6 +47,7 @@ class cell {
 			preCell(NULL), 
 			distance(std::numeric_limits<int>::max()),
 			manhattan_dist(0), 
+			total_cost(0),
 			step_cost(0), 
 			goal_order(-1){}
 };

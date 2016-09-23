@@ -1,55 +1,64 @@
-
-#include <iostream>
-#include <string>
-#include <vector>
-#include <queue>
-#include <stack>
-#include <algorithm>
-#include <fstream>
-#include <sstream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-// our own header files
-#include "bfs.h"
-#include "dfs.h"
+#include "astar.h"
 	
 
+using namespace std;
 
-void astar(cell* start, cell* end, vector< vector<cell*> >& Maze)
-{
-	//f(n)=g(n)+h(n)
-	std::vector<cell*> v;
-	cell * cur=start;
-	
+void AStar::astar_single(vector< vector<cell*> > &Maze, cell* start, cell*goal) {
+	cell * curCell;
+	priority_queue <cell*, vector<cell*>, greaterEvaluation> frontier;
+	start->visited = true;
+	start->total_cost = 0;
+	frontier.push(start);
+	while (!frontier.empty()){
+		curCell = frontier.top();
+		frontier.pop();
+		if (curCell->x + 1 < Maze[0].size()) //if not at the right border, go right
+			AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y][curCell->x + 1]);
+		if (curCell->y + 1 < Maze.size()) //if not at the bottom border, the go down
+			AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y + 1][curCell->x]);
+		if (curCell->x -1 >= 0) //if not at the left border, go left
+			AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y][curCell->x - 1]);
+		if (curCell->y - 1 >= 0) //if not at the top border, the go up
+			AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y - 1][curCell->x]);
+		if (curCell == goal)
+			break;
+	}
+	AStar::astar_generatePath(goal);
+	AStar::astar_printResult(Maze, start, goal);
 }
 
-bool astar_recursive(cell* cur,vector<cell*> &nodes,vector< vector<cell*> >& Maze)
-{
-	//TODO
-	// if outside or a loop, then 
-	int x=cur->x,y=cur->y;
-	if (x < 0 || y < 0 || x >= Maze[0].size() || y >= Maze.size()) {
-		return false;
+void AStar::astar_checkFrontier(priority_queue <cell*, vector<cell*>, greaterEvaluation> &frontier, vector< vector<cell*> > &Maze, cell* preCell, cell* curCell) {
+	if (curCell->visited || curCell->wall)
+		return;
+	// cout << "curCell to push to <frontier></frontier> is [" << curCell->y << ',' << curCell->x << "]\n";
+	curCell->preCell = preCell;
+	curCell->visited = true;
+	curCell->curChar = '.';
+	curCell->total_cost = preCell->total_cost + 1;
+	frontier.push(curCell);
+}
+
+void AStar::astar_printResult(vector< vector<cell*> > &Maze, cell* start, cell* goal) {
+	cout << "printing the output maze of A* search with path: \n";
+	goal->curChar = '*';
+	int pathCost = 0;
+	for (int i = 0; i<Maze.size(); i++){
+		for(int j=0; j<Maze[0].size(); j++) {
+			cell * curCell = Maze[i][j];
+			cout << curCell->curChar;
+			// cout << curCell->total_cost <<'\n';
+			if (curCell->curChar == '*')
+				pathCost++;
+		}
+		cout << '\n';
 	}
-	//check if arrived destination
-	if(cur->total_cost<=nodes[0]&&cur->end==true)
-	{
-		return true;
+	cout << "The total path cost from the starting point to reach the goal is " << pathCost << '\n';
+}
+
+void AStar::astar_generatePath(cell* goal) {
+	cell * curCell = goal;
+	while (curCell->preCell != NULL) {
+		curCell->curChar = '*';
+		curCell = curCell->preCell;
 	}
-	//check if bounced on the wall
-	if(cur->curChar=='%') 
-		return false;
-	
-
-
-	if(astar_recursive(Maze[x-1][y-1],nodes,Maze)||astar_recursive(Maze[x][y-1],nodes,Maze)||astar_recursive(Maze[x+1][y],nodes,Maze)||astar_recursive(Maze[x+1][y+1],nodes,Maze))
-	{
-		cur->curChar='.';
-		return true;
-	}
-
-
-
-
 }
