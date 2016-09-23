@@ -21,9 +21,12 @@ class cell {
 		// start point, end point
 		bool start;
 		bool end;
+		cell* previous;
+		
+		// do we need this
+		// yes, to caculate the mahattan distance// Guangzhe
 
 		cell* preCell;
-
 		int distance;
 
 		int x;
@@ -46,6 +49,10 @@ class cell {
 			manhattan_dist(0), 
 			step_cost(0), 
 			goal_order(-1){}
+
+		bool operator<(const cell &c1, const cell &c2){
+			
+		};
 };
 
 #endif

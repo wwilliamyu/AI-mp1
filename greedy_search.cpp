@@ -43,25 +43,30 @@ void GreedySearch::greedy_checkFrontier(priority_queue <cell*, vector<cell*>, sh
 	// cout << "curCell to push to <frontier></frontier> is [" << curCell->y << ',' << curCell->x << "]\n";
 	curCell->preCell = preCell;
 	curCell->visited = true;
+	curCell->curChar = '.';
 	frontier.push(curCell);
 }
 
 void GreedySearch::greedy_printResult(vector< vector<cell*> > &Maze, cell* start, cell* goal) {
 	cout << "printing the output maze with path: \n";
 	goal->curChar = '*';
+	int pathCost = 0;
 	for (int i = 0; i<Maze.size(); i++){
 		for(int j=0; j<Maze[0].size(); j++) {
 			cell * curCell = Maze[i][j];
 			cout << curCell->curChar;
+			if (curCell->curChar == '*')
+				pathCost++;
 		}
 		cout << '\n';
 	}
+	cout << "The total path cost from the starting point to reach the goal is " << pathCost << '\n';
 }
 
 void GreedySearch::greedy_generatePath(cell* goal) {
 	cell * curCell = goal;
 	while (curCell->preCell != NULL) {
-		curCell->curChar = '.';
+		curCell->curChar = '*';
 		curCell = curCell->preCell;
 	}
 }

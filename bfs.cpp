@@ -1,5 +1,12 @@
 #include "bfs.h"
 
+
+int BFS(vector<vector<cell*> > & Maze)
+{
+	Maze[0][0]->curChar='S';
+	printf("%s\n", "bfs started");
+    return 0;
+
 using namespace std;
 
 void BreadthFS::BFS(cell* start, cell* end, vector< vector<cell*> >& Maze)
