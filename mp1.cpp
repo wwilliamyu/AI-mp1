@@ -27,8 +27,8 @@ using namespace std;
 */
 int main(int argc, char** args) {
 	if (argc != 3) {
-		cout << "Wrong input format. ./mp1 [algorithm] [input file path]. algorithm options are d,b,g,a\n";
-		return 1;
+ 		cout << "Wrong input format. ./mp1 [algorithm] [input file path]. algorithm options are d,b,g,a, A\n";
+		return 1; 
 	}
 	ifstream mazefile(args[2]);
 	vector< vector<cell*> > Maze;
