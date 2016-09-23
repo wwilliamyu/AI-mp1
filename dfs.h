@@ -1,6 +1,5 @@
 #ifndef DFS_H
 #define DFS_H
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -21,7 +20,7 @@ namespace DepthFS {
 
 	void DFS(cell* start, cell* end, vector< vector<cell*> >& Maze);
 
-	void DFS_expand(vector< vector<cell*> >& Maze, stack<cell*>& s, cell* parent, int new_x, int new_y);
+	void DFS_expand(vector< vector<cell*> >& Maze, stack<cell*>& s, cell* curr, cell* new_cell);
 	
 }
 

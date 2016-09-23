@@ -40,8 +40,7 @@ class cell {
 		int step_cost;
 		int goal_order;
 
-		cell() : 
-			visited(false),
+		cell() :
 			start(false),
 			end(false),
 			preCell(NULL), 

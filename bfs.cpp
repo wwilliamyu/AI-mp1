@@ -6,52 +6,46 @@ void BreadthFS::BFS(cell* start, cell* end, vector< vector<cell*> >& Maze)
 {
 	queue< cell* > q;
 	cell* curr;
+	start->visited = true;
 
 	q.push(start);
 
+	//int count = 0;
 	while (!q.empty()) {
 		curr = q.front();
 		q.pop();
 		curr->visited = true;
-
 		if (curr == end) {
 			break;
 			// at goal
 		}
 
-		if (curr->x + 1 < Maze[0].size()) {
-            BFS_expand(Maze, q, curr, curr->x + 1, curr->y); // RIGHT
+		if (curr->x + 1 < Maze[0].size() && Maze[curr->y][curr->x + 1]->wall != true) {
+            BFS_expand(Maze, q, curr, Maze[curr->y][curr->x + 1]); // RIGHT
         }
-        if (curr->y + 1 < Maze.size()) {
-            BFS_expand(Maze, q, curr, curr->x, curr->y + 1); // DOWN
+        if (curr->y + 1 < Maze.size() && Maze[curr->y + 1][curr->x]->wall != true) {
+            BFS_expand(Maze, q, curr, Maze[curr->y + 1][curr->x]); // DOWN
         }
-        if (curr->x - 1 >= 0) {
-            BFS_expand(Maze, q, curr, curr->x - 1, curr->y); // LEFT
+        if (curr->x - 1 >= 0 && Maze[curr->y][curr->x - 1]->wall != true) {
+            BFS_expand(Maze, q, curr, Maze[curr->y][curr->x - 1]); // LEFT
         }
-        if (curr->y - 1 >= 0) {
-            BFS_expand(Maze, q, curr, curr->x, curr->y - 1); // UP
+        if (curr->y - 1 >= 0 && Maze[curr->y - 1][curr->x]->wall != true) {
+            BFS_expand(Maze, q, curr, Maze[curr->y - 1][curr->x]); // UP
         }
-
+	}
+	cell * curCell = end;
+	while (curCell->preCell != NULL) {
+		curCell->curChar = '*';
+		curCell = curCell->preCell;
 	}
 }
 
-void BreadthFS::BFS_expand(vector< vector<cell*> >& Maze, queue<cell*>& q, cell* parent, int new_x, int new_y) {
+void BreadthFS::BFS_expand(vector< vector<cell*> >& Maze, queue<cell*>& q, cell* curr, cell* new_cell) {
 
 	// FOUR NODES ONLY
-
-	// if outside of the maze
-	if (new_x < 0 || new_y < 0 || new_x > Maze[0].size() || new_y > Maze.size()) {
-		return;
+	if (!new_cell->wall && !new_cell->visited) {
+		new_cell->preCell = curr;
+		q.push(new_cell);
 	}
-
-	cell* k = Maze[new_x][new_y];
-	
-	if (k->visited == true || k->wall == true) {
-		return;
-	}
-	else {
-		k->preCell = parent;
-		q.push(k);
-		return;
-	}
+	return;
 }
