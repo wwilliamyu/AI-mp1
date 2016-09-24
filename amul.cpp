@@ -3,8 +3,16 @@
 	
 
 using namespace std;
+// we need a goal list, but at the same time we need all of current goals children being in the PQ(Children list) ordered by F=G+H
+// G is the A* distance, H is the minmum connection distance, depending on the Goal_remaining_list
+struct goal
+{
+	cell * the_cell;
+	int H;
+};
 
-void Amul::Amul(cell* start, vector<cell*>&goallist, vector< vector<cell*> >& Maze){
+
+void Amul::Amul(cell* start,vector<goal*> children, vector<goal*>&Goal_remained, vector< vector<cell*> >& Maze){
 	//
 	int vertices_num=goallist.size();
 	// int** interconnection = new int*[vertices_num];
@@ -22,14 +30,17 @@ void Amul::Amul(cell* start, vector<cell*>&goallist, vector< vector<cell*> >& Ma
 	//G is the BFS distance traveled
 	//G(i,j)
 	//we try to find min(G+H)
-	while(!goallist.empty()){
+	while(!children.empty()){
 		for (int j = 0; j < goallist.size(); ++i)
 		{
 			cell * next=goallist[j];
 			int H=GetHeuristic(next);
-			
-
+			// get a vector of distance from current goal to the next goals G(i,j) using BFS/Then AStar
+			// choose the least F=G+H
+			// Go for it (pop the goal from the PQueue)
+			// Then we have arrived at a new one, push its children to the goalist, 
 		}
+		if(goallist.empty())
 		BreadthFS::BFS(start,)
 
 	}
