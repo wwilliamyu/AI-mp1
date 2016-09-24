@@ -15,6 +15,7 @@
 #include "dfs.h"
 #include "greedy_search.h"
 #include "astar.h"
+#include "amul.h"
 
 
 
@@ -32,7 +33,7 @@ int main(int argc, char** args) {
 	}
 	ifstream mazefile(args[2]);
 	vector< vector<cell*> > Maze;
-	vector<cells> multidots;
+	vector<cell*> multidots;
 	cell * P;
 	cell * dot;
 	string line;
@@ -62,6 +63,7 @@ int main(int argc, char** args) {
 					curCell->end = true;
 					dot = curCell;
 					multidots.push_back(curCell);
+					cout<<"pushing in the current dot position"<<curCell->x<<"\r\n";
 					curLineofCells.push_back(curCell);
 					break;
 				case 'P':
@@ -110,9 +112,9 @@ int main(int argc, char** args) {
 			cout<<"Runing A* Algorithm for single dot\n";
 			GreedySearch::calculate_manhattan_distance(Maze, dot);
 			AStar::astar_single(Maze, P, dot);
-		case 'mul':
+		case 'm':
 			cout<<"Runing A* Algorithm for multi dots\n";
-			Amul::amul(Maze, P,multidots);
+			Amul::Amul(P,multidots,Maze);
 		default:
 			break;
 	}

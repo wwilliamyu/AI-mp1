@@ -1,63 +1,9 @@
 #include "amul.h"
-#include <limits>
 	
 
 using namespace std;
 
 void Amul::Amul(cell* start, vector<cell*>&goallist, vector< vector<cell*> >& Maze){
-	//
-	int vertices_num=goallist.size();
-	// int** interconnection = new int*[vertices_num];
-	int big_H=0;// this is the Heuristic function for the rest nodes
-	// H(j)=min_connection_distance_between_the_untraveled_nodes;
-	// for(int i = 0; i < vertices_num; ++i){
- //    	interconnection[i] = new int[vertices_num];
- //    	for(int j=0;j<vertices_num;j++)
- //    	{
- //    		interconnection[i][j]=MDistance(goallist[i],goallist[j]);
- //    		interconnection[j][i]=MDistance(goallist[i],goallist[j]);
- //    	}
-	// }
-	cell * cur=start;
-	//G is the BFS distance traveled
-	//G(i,j)
-	//we try to find min(G+H)
-	while(!goallist.empty()){
-		for (int j = 0; j < goallist.size(); ++i)
-		{
-			cell * next=goallist[j];
-			int H=GetHeuristic(next);
-			
-
-		}
-		BreadthFS::BFS(start,)
-
-	}
-int Amul::GetHeuristic(cell * next,vector<cell*>&goallist){
-	// H(next)=min_connection_distance_between_the_untraveled_nodes;
-	// closest contains  
-	int Heuristic;
-	std::vector<int> distances;
-	distances.push_back(0);
-	for (int i = 0; i < goallist.size(); ++i)
-	{
-		Heuristic=std::numeric_limits<int>::max();
-		for (int j = 0; i < goallist.size(); ++i)
-		{
-			int distance=MDistance(goallist[i],goallist[j]);
-			if(distance<Heuristic)
-				Heuristic=distance;
-		}
-		distances.push_back(Heuristic);
-	}	
-	int rest_connection_distance=0;
-	for(std::vector<int>::iterator it = distances.begin(); it != distances.end(); ++it)
-    rest_connection_distance += *it;
-}
-
-void Amul::MDistance(cell* a, cell* b){
-	sqrt(pow(a->x - b->x, 2) + pow(a->y - b->y, 2))
-}
 	//First we caculate the path cost for every possible connections in between the dots
 	//Second we try every combinations of the dots using a heuristic approach
 	//Heuristic approach:
