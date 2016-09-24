@@ -33,7 +33,7 @@ namespace GreedySearch {
 
 	void greedy_checkFrontier(priority_queue <cell*, vector<cell*>, greaterManhattanDist> &frontier, vector< vector<cell*> > &Maze, cell* preCell, cell* curCell);
 
-	void greedy_printResult(vector< vector<cell*> >  &Maze, cell* start, cell* goal);
+	int greedy_printResult(vector< vector<cell*> >  &Maze, cell* start, cell* goal);
 
 	void greedy_generatePath(cell* goal);
 }

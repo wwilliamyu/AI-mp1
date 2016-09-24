@@ -46,7 +46,7 @@ void GreedySearch::greedy_checkFrontier(priority_queue <cell*, vector<cell*>, gr
 	frontier.push(curCell);
 }
 
-void GreedySearch::greedy_printResult(vector< vector<cell*> > &Maze, cell* start, cell* goal) {
+int GreedySearch::greedy_printResult(vector< vector<cell*> > &Maze, cell* start, cell* goal) {
 	// ofstream myfile ("example.txt");
  //  if (myfile.is_open())
  //  {
@@ -70,6 +70,7 @@ void GreedySearch::greedy_printResult(vector< vector<cell*> > &Maze, cell* start
 		cout << '\n';
 	}
 	cout << "The total path cost from the starting point to reach the goal is " << pathCost << '\n';
+	return pathCost;
 }
 
 void GreedySearch::greedy_generatePath(cell* goal) {
