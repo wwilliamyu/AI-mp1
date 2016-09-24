@@ -9,10 +9,12 @@ struct goal
 {
 	cell * the_cell;
 	int H;
+	int G;//A* or BFS
+	int F;
 };
 
-
-void Amul::Amul(cell* start,vector<goal*> children, vector<goal*>&Goal_remained, vector< vector<cell*> >& Maze){
+//
+void Amul::Amul(cell* start,priority_queue <cell*, vector<cell*>, greaterEvaluation> &children,vector<goal*> goallist, vector<goal*> Goal_remained, vector< vector<cell*> >& Maze){
 	//
 	int vertices_num=goallist.size();
 	// int** interconnection = new int*[vertices_num];
@@ -25,14 +27,25 @@ void Amul::Amul(cell* start,vector<goal*> children, vector<goal*>&Goal_remained,
  //    		interconnection[i][j]=MDistance(goallist[i],goallist[j]);
  //    		interconnection[j][i]=MDistance(goallist[i],goallist[j]);
  //    	}
-	// }
+// }
 	cell * cur=start;
 	//G is the BFS distance traveled
 	//G(i,j)
 	//we try to find min(G+H)
 	while(!children.empty()){
+		// Pop the children with the lowest F, then push all of it's child with new updated Heuristic function and path cost.
+		// continue to pop until the one of them have a zero goal list and the 
+		goal Fsmallest=children.pop();
+		for (int i = 0; i < goallist.size(); ++i)
+		{
+			goal next.H=;
+			next.G=AStar.pathCost;
+			children.push(next);
+		}
+
 		for (int j = 0; j < goallist.size(); ++i)
 		{
+
 			cell * next=goallist[j];
 			int H=GetHeuristic(next);
 			// get a vector of distance from current goal to the next goals G(i,j) using BFS/Then AStar
@@ -40,8 +53,8 @@ void Amul::Amul(cell* start,vector<goal*> children, vector<goal*>&Goal_remained,
 			// Go for it (pop the goal from the PQueue)
 			// Then we have arrived at a new one, push its children to the goalist, 
 		}
-		if(goallist.empty())
-		BreadthFS::BFS(start,)
+		// if(goallist.empty()) // if the newest poped children(lowest F) has no more goals, it means it is the optimal
+		BreadthFS::BFS(start,);
 
 	}
 int Amul::GetHeuristic(cell * next,vector<cell*>&goallist){

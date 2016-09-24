@@ -17,7 +17,12 @@ using namespace std;
 // This is the content of the .h file, which is where the declarations go
 
 namespace Amul {
-
+	struct greater
+	{
+		bool operator() ( const goal* a, const goal* b ) const {
+			return a->F > b->F;
+		}
+	};
 	void Amul(cell* start, vector<cell*>&goallist, vector< vector<cell*> >& Maze);
 	void MDistance(cell* a, cell* b);
 	// void Amul_expand(vector< vector<cell*> >& Maze, queue<cell*>& q, cell* curr, cell* new_cell);
