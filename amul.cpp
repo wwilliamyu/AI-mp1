@@ -51,7 +51,8 @@ Amul::goal* Amul::setGoal(goal* current,cell* next,vector<cell*> goallist, vecto
 			// 	Maze[i][j]->curChar=' ';
 		}
 	}
-	newone->G=Amul::astar_single(Maze, current->the_cell, next);
+	Amul::astar_single(Maze, current->the_cell, next);
+	newone->G=newone->the_cell->total_cost;
 	cout<<"line 34\r\n";
 
 	newone->F=newone->H+newone->G;
