@@ -101,17 +101,17 @@ int main(int argc, char** args) {
 			GreedySearch::greedy_printResult(Maze, P, dot);
 			break;
 		case 'g':
-			cout<<"Runing Greedy Best-First Algorithm for single dot\n";
+			cout<<"Running Greedy Best-First Algorithm for single dot\n";
 			GreedySearch::calculate_manhattan_distance(Maze, dot);
 			GreedySearch::greedy_single(Maze, P, dot);
 			GreedySearch::greedy_printResult(Maze, P, dot);
 			break;
 		case 'a':
-			cout<<"Runing A* Algorithm for single dot\n";
+			cout<<"Running A* Algorithm for single dot\n";
 			GreedySearch::calculate_manhattan_distance(Maze, dot);
 			AStar::astar_single(Maze, P, dot);
 		case 'mul':
-			cout<<"Runing A* Algorithm for multi dots\n";
+			cout<<"Running A* Algorithm for multi dots\n";
 			Amul::amul(Maze, P,multidots);
 		default:
 			break;
