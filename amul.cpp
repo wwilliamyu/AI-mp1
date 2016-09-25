@@ -6,7 +6,7 @@ using namespace std;
 // we need a goal list, but at the same time we need all of current goals children being in the PQ(Children list) ordered by F=G+H
 // G is the A* distance, H is the minmum connection distance, depending on the Goal_remaining_list
 
-Amul::goal* Amul::setGoal(goal* current,goal* next,vector<cell*> goallist, vector< vector<cell*> >& Maze)
+Amul::goal* Amul::setGoal(goal* current,cell* next,vector<cell*> goallist, vector< vector<cell*> >& Maze)
 {
 	//remove current from the goallist
 	for (int i = 0; i < goallist.size(); ++i)
@@ -18,23 +18,24 @@ Amul::goal* Amul::setGoal(goal* current,goal* next,vector<cell*> goallist, vecto
 	goal * newone=new goal;
 	newone->remaining=goallist;
 	newone->H=GetHeuristic(next,newone->remaining);
-	newone->G=AStar::astar_single(Maze, current->the_cell, next->the_cell);
+	newone->G=AStar::astar_single(Maze, current->the_cell, next);
 	newone->F=newone->H+newone->G;
 	return newone;
 }
 //
 void Amul::Amul(cell* start, vector<cell*> dots, vector< vector<cell*> >& Maze){
 
-	priority_queue <goal*,vector<goal*>, greater> children;
+	priority_queue <goal* ,vector<goal*>, greater> children;
 	vector<goal*> goalist;
-	goal * current;
+	goal * current=new goal;
 	current->the_cell=start;
-	current=setGoal(current,current,dots,Maze);
+	current=setGoal(current,current->the_cell,dots,Maze);
 	children.push(current);
 	while(!children.empty()){
 		// Pop the children with the lowest F, then push all of it's child with new updated Heuristic function and path cost.
 		// continue to pop until the one of them have a zero remaining goal list and the 
-		current=children.pop();
+		current=children.top();
+		children.pop();
 
 		if(current->remaining.empty())
 			break;
@@ -43,17 +44,19 @@ void Amul::Amul(cell* start, vector<cell*> dots, vector< vector<cell*> >& Maze){
 		for (int i = 0; i < current->remaining.size(); ++i)
 		{
 			if(current->the_cell==current->remaining[i])
-				current.remaining.erase(current->remaining.begin()+i);
+				current->remaining.erase(current->remaining.begin()+i);
 		}
 		//push next goals to the list
-		for (int i = 0; i < dots.size(); ++i)
+		for (int i = 0; i < current->remaining.size(); ++i)
 		{
-			children.push(setGoal(current,dots,Maze));
+			goal * next=setGoal(current,current->remaining[i],dots,Maze);
+			children.push(next);
 		}
 
 	}
+}
 
-int Amul::GetHeuristic(goal * current,vector<goal*>&goallist){
+int Amul::GetHeuristic(cell * current,vector<cell*> & goallist){
 	// H(next)=min_connection_distance_between_the_untraveled_nodes;
 	// closest contains  
 	int Heuristic;
@@ -66,20 +69,20 @@ int Amul::GetHeuristic(goal * current,vector<goal*>&goallist){
 		{
 			int distance=Heuristic;
 			if(goallist[i]!=current)
-				distance=MDistance(goallist[i]->the_cell,goallist[j]->the_cell);
+				distance=MDistance(goallist[i],goallist[j]);
 			if(distance<Heuristic)
 				Heuristic=distance;
 		}
 		distances.push_back(Heuristic);
 	}	
 	int rest_connection_distance=0;
-	sort(distances);
+	sort(distances.begin(),distances.end());
 	for(std::vector<int>::iterator it = distances.begin(); it != distances.end()-1; ++it)
     rest_connection_distance += *it;
 
 	return rest_connection_distance;
 }
 
-void Amul::MDistance(cell* a, cell* b){
-	sqrt(pow(a->x - b->x, 2) + pow(a->y - b->y, 2))
+int  Amul::MDistance(cell* a, cell* b){
+	return sqrt(pow(a->x - b->x, 2) + pow(a->y - b->y, 2));
 }

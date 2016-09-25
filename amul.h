@@ -34,10 +34,9 @@ namespace Amul {
 		}
 	};
 	void Amul(cell* start, vector<cell*> dots, vector< vector<cell*> >& Maze);
-	void MDistance(cell* a, cell* b);
-	int GetHeuristic(goal * current,vector<cell*>&goallist);
-	Amul::goal * setGoal(goal* current,goal* next,vector<cell*> goallist, vector< vector<cell*> >& Maze);
-	void MDistance(cell* a, cell* b);
+	int MDistance(cell* a, cell* b);
+	int GetHeuristic(cell * current,vector<cell*> & goallist);
+	Amul::goal * setGoal(goal* current,cell* next,vector<cell*> goallist, vector< vector<cell*> >& Maze);
 
 	// void Amul_expand(vector< vector<cell*> >& Maze, queue<cell*>& q, cell* curr, cell* new_cell);
 	
