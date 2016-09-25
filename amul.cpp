@@ -5,59 +5,55 @@
 using namespace std;
 // we need a goal list, but at the same time we need all of current goals children being in the PQ(Children list) ordered by F=G+H
 // G is the A* distance, H is the minmum connection distance, depending on the Goal_remaining_list
-struct goal
-{
-	cell * the_cell;
-	int H;
-	int G;//A* or BFS
-	int F;
-};
 
+Amul::goal* Amul::setGoal(goal* current,goal* next,vector<cell*> goallist, vector< vector<cell*> >& Maze)
+{
+	//remove current from the goallist
+	for (int i = 0; i < goallist.size(); ++i)
+	{
+		if(current->the_cell==goallist[i])
+			goallist.erase(goallist.begin()+i);
+	}
+
+	goal * newone=new goal;
+	newone->remaining=goallist;
+	newone->H=GetHeuristic(next,newone->remaining);
+	newone->G=AStar::astar_single(Maze, current->the_cell, next->the_cell);
+	newone->F=newone->H+newone->G;
+	return newone;
+}
 //
-void Amul::Amul(cell* start,priority_queue <cell*, vector<cell*>, greaterEvaluation> &children,vector<goal*> goallist, vector<goal*> Goal_remained, vector< vector<cell*> >& Maze){
-	//
-	int vertices_num=goallist.size();
-	// int** interconnection = new int*[vertices_num];
-	int big_H=0;// this is the Heuristic function for the rest nodes
-	// H(j)=min_connection_distance_between_the_untraveled_nodes;
-	// for(int i = 0; i < vertices_num; ++i){
- //    	interconnection[i] = new int[vertices_num];
- //    	for(int j=0;j<vertices_num;j++)
- //    	{
- //    		interconnection[i][j]=MDistance(goallist[i],goallist[j]);
- //    		interconnection[j][i]=MDistance(goallist[i],goallist[j]);
- //    	}
-// }
-	cell * cur=start;
-	//G is the BFS distance traveled
-	//G(i,j)
-	//we try to find min(G+H)
+void Amul::Amul(cell* start, vector<cell*> dots, vector< vector<cell*> >& Maze){
+
+	priority_queue <goal*,vector<goal*>, greater> children;
+	vector<goal*> goalist;
+	goal * current;
+	current->the_cell=start;
+	current=setGoal(current,current,dots,Maze);
+	children.push(current);
 	while(!children.empty()){
 		// Pop the children with the lowest F, then push all of it's child with new updated Heuristic function and path cost.
-		// continue to pop until the one of them have a zero goal list and the 
-		goal Fsmallest=children.pop();
-		for (int i = 0; i < goallist.size(); ++i)
-		{
-			goal next.H=;
-			next.G=AStar.pathCost;
-			children.push(next);
-		}
+		// continue to pop until the one of them have a zero remaining goal list and the 
+		current=children.pop();
 
-		for (int j = 0; j < goallist.size(); ++i)
-		{
+		if(current->remaining.empty())
+			break;
+		//remove current from the goallist
 
-			cell * next=goallist[j];
-			int H=GetHeuristic(next);
-			// get a vector of distance from current goal to the next goals G(i,j) using BFS/Then AStar
-			// choose the least F=G+H
-			// Go for it (pop the goal from the PQueue)
-			// Then we have arrived at a new one, push its children to the goalist, 
+		for (int i = 0; i < current->remaining.size(); ++i)
+		{
+			if(current->the_cell==current->remaining[i])
+				current.remaining.erase(current->remaining.begin()+i);
 		}
-		// if(goallist.empty()) // if the newest poped children(lowest F) has no more goals, it means it is the optimal
-		BreadthFS::BFS(start,);
+		//push next goals to the list
+		for (int i = 0; i < dots.size(); ++i)
+		{
+			children.push(setGoal(current,dots,Maze));
+		}
 
 	}
-int Amul::GetHeuristic(cell * next,vector<cell*>&goallist){
+
+int Amul::GetHeuristic(goal * current,vector<goal*>&goallist){
 	// H(next)=min_connection_distance_between_the_untraveled_nodes;
 	// closest contains  
 	int Heuristic;
@@ -68,110 +64,22 @@ int Amul::GetHeuristic(cell * next,vector<cell*>&goallist){
 		Heuristic=std::numeric_limits<int>::max();
 		for (int j = 0; i < goallist.size(); ++i)
 		{
-			int distance=MDistance(goallist[i],goallist[j]);
+			int distance=Heuristic;
+			if(goallist[i]!=current)
+				distance=MDistance(goallist[i]->the_cell,goallist[j]->the_cell);
 			if(distance<Heuristic)
 				Heuristic=distance;
 		}
 		distances.push_back(Heuristic);
 	}	
 	int rest_connection_distance=0;
-	for(std::vector<int>::iterator it = distances.begin(); it != distances.end(); ++it)
+	sort(distances);
+	for(std::vector<int>::iterator it = distances.begin(); it != distances.end()-1; ++it)
     rest_connection_distance += *it;
+
+	return rest_connection_distance;
 }
 
 void Amul::MDistance(cell* a, cell* b){
 	sqrt(pow(a->x - b->x, 2) + pow(a->y - b->y, 2))
 }
-	//First we caculate the path cost for every possible connections in between the dots
-	//Second we try every combinations of the dots using a heuristic approach
-	//Heuristic approach:
-	//F=(traveled+A*(interconnection in the remaining goals))
-
-
-	// if we have 5 dots, a,b,c,d
-	// Our starting point is a
-	//Then for b: F=A*(a,b)+H(b)=A*(a,b)+min{ [A*(b,c)+A*(c,d)] , [A*(b,d)+A*(d,c)]}
-	//evaluate
-	// 
-
-	/*while(!goallist.empty())
-	{
-		pop the next dot cell with least F in the queue,
-		then push its connections
-	}
-	*/
-	//
-	//
-
-	// cell *curCell;
-	// priority_queue <cell*, vector<cell*>, greaterEvaluation> frontier;
-	
-	// start->visited = true;
-	// start->total_cost = 0;
-
-
-
-	// cell * curCell;
-	// priority_queue <cell*, vector<cell*>, greaterEvaluation> frontier;
-	// start->visited = true;
-	// start->total_cost = 0;
-	// frontier.push(start);
-	// while (!frontier.empty()){
-	// 	curCell = frontier.top();
-	// 	frontier.pop();
-	// 	if (curCell->x + 1 < Maze[0].size()) //if not at the right border, go right
-	// 		AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y][curCell->x + 1]);
-	// 	if (curCell->y + 1 < Maze.size()) //if not at the bottom border, the go down
-	// 		AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y + 1][curCell->x]);
-	// 	if (curCell->x -1 >= 0) //if not at the left border, go left
-	// 		AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y][curCell->x - 1]);
-	// 	if (curCell->y - 1 >= 0) //if not at the top border, the go up
-	// 		AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y - 1][curCell->x]);
-
-	// 	//reached a dot, then remove from the goal list
-	// 	if (curCell == goal)
-	// 	{
-
-	// 	}
-			
-	// }
-	// AStar::astar_generatePath(goal);
-	// AStar::astar_printResult(Maze, start, goal);
-}
-
-
-// void Amulti::amul_checkFrontier(priority_queue <cell*, vector<cell*>, greaterEvaluation> &frontier, vector< vector<cell*> > &Maze, cell* preCell, cell* curCell) {
-// 	if (curCell->wall)
-// 		return;
-// 	// cout << "curCell to push to <frontier></frontier> is [" << curCell->y << ',' << curCell->x << "]\n";
-// 	curCell->preCell = preCell;
-// 	curCell->visited = true;
-// 	curCell->curChar = '.';
-// 	curCell->total_cost = preCell->total_cost + 1;
-// 	frontier.push(curCell);
-// }
-
-// void Amulti::amul_printResult(vector< vector<cell*> > &Maze, cell* start, cell* goal) {
-// 	cout << "printing the output maze of A* search with path: \n";
-// 	goal->curChar = '*';
-// 	int pathCost = 0;
-// 	for (int i = 0; i<Maze.size(); i++){
-// 		for(int j=0; j<Maze[0].size(); j++) {
-// 			cell * curCell = Maze[i][j];
-// 			cout << curCell->curChar;
-// 			// cout << curCell->total_cost <<'\n';
-// 			if (curCell->curChar == '*')
-// 				pathCost++;
-// 		}
-// 		cout << '\n';
-// 	}
-// 	cout << "The total path cost from the starting point to reach the goal is " << pathCost << '\n';
-// }
-
-// void Amulti::amul_generatePath(cell* goal) {
-// 	cell * curCell = goal;
-// 	while (curCell->preCell != NULL) {
-// 		curCell->curChar = '*';
-// 		curCell = curCell->preCell;
-// 	}
-// }

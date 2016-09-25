@@ -114,7 +114,9 @@ int main(int argc, char** args) {
 			AStar::astar_single(Maze, P, dot);
 		case 'm':
 			cout<<"Runing A* Algorithm for multi dots\n";
-			Amul::Amul(P,multidots,Maze);
+			// Amul::Amul(P,multidots,Maze);
+			GreedySearch::greedy_printResult(Maze, P, dot);
+
 		default:
 			break;
 	}

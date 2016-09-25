@@ -3,8 +3,9 @@
 
 using namespace std;
 
-void AStar::astar_single(vector< vector<cell*> > &Maze, cell* start, cell*goal) {
+int AStar::astar_single(vector< vector<cell*> > &Maze, cell* start, cell*goal) {
 	cell * curCell;
+	int total=0;
 	priority_queue <cell*, vector<cell*>, greaterEvaluation> frontier;
 	start->visited = true;
 	start->total_cost = 0;
@@ -21,10 +22,14 @@ void AStar::astar_single(vector< vector<cell*> > &Maze, cell* start, cell*goal) 
 		if (curCell->y - 1 >= 0) //if not at the top border, the go up
 			AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y - 1][curCell->x]);
 		if (curCell == goal)
+		{
 			break;
+			total=curCell->total_cost;
+		}
 	}
 	AStar::astar_generatePath(goal);
 	AStar::astar_printResult(Maze, start, goal);
+	return total;
 }
 
 void AStar::astar_checkFrontier(priority_queue <cell*, vector<cell*>, greaterEvaluation> &frontier, vector< vector<cell*> > &Maze, cell* preCell, cell* curCell) {
