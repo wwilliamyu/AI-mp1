@@ -44,6 +44,7 @@ void DepthFS::DFS_expand(vector< vector<cell*> >& Maze, stack<cell*>& s, cell* c
     // FOUR NODES ONLY
     if (!new_cell->wall && !new_cell->visited) {
         new_cell->preCell = curr;
+        curr->curChar = '.';
         s.push(new_cell);
     }
     return;
