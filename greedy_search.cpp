@@ -57,19 +57,23 @@ int GreedySearch::greedy_printResult(vector< vector<cell*> > &Maze, cell* start,
  //  	cout << "Unable to open file";
  //  	return;
  //  } 
-	cout << "printing the output maze of greedy search with path: \n";
+	cout << "Printing the output maze with path and expanded nodes: \n";
 	goal->curChar = '*';
 	int pathCost = 0;
+	int expanded = 0;
 	for (int i = 0; i<Maze.size(); i++){
 		for(int j=0; j<Maze[0].size(); j++) {
 			cell * curCell = Maze[i][j];
 			cout << curCell->curChar;
 			if (curCell->curChar == '*')
 				pathCost++;
+			if (curCell->curChar == '.')
+				expanded++;
 		}
 		cout << '\n';
 	}
-	cout << "The total path cost from the starting point to reach the goal is " << pathCost << '\n';
+	cout << "The total path cost from the starting point to reach the goal is " << pathCost << ".\n";
+	cout << "The number of expanded nodes is " << expanded << ".\n";
 	return pathCost;
 }
 

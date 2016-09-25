@@ -16,7 +16,9 @@ void DepthFS::DFS(cell* start, cell* end, vector< vector<cell*> >& Maze) {
             break;
             // at goal
         }
+
         if (!curr->visited) {
+
             curr->visited = true;
             if (curr->x + 1 < Maze[0].size() && Maze[curr->y][curr->x + 1]->wall != true) {
                 DFS_expand(Maze, s, curr, Maze[curr->y][curr->x + 1]); // RIGHT

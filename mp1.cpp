@@ -79,7 +79,7 @@ int main(int argc, char** args) {
 		row++;
 		Maze.push_back(curLineofCells);
 	}
-	cout << "the size of the maze is width x height: "<< Maze[0].size() << 'x' << Maze.size()<<'\n';
+	cout << "The size of the maze is width x height: "<< Maze[0].size() << 'x' << Maze.size()<<'\n';
 	// cout << "the maze constructed is: \n";
 	// for (int i = 0; i<Maze.size(); i++){
 	// 	for(int j=0; j<Maze[0].size(); j++) {
