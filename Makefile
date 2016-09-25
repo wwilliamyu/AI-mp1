@@ -1,5 +1,5 @@
 EXE = mp1
-OBJS = mp1.cpp bfs.o dfs.o greedy_search.o astar.o
+OBJS = mp1.cpp bfs.o dfs.o greedy_search.o astar.o amul.o
 
 COMPILER = g++
 COMPILER_OPTS = -c -g -std=c++11 -Wall -pedantic -Werror
@@ -21,6 +21,9 @@ greedy_search.o : greedy_search.h greedy_search.cpp
 
 astar.o : astar.h astar.cpp
 	$(COMPILER) $(COMPILER_OPTS) astar.cpp
+
+amul.o : amul.h amul.cpp
+	$(COMPILER) $(COMPILER_OPTS) amul.cpp
 	
 clean :
 	-rm -f *.o $(EXE)

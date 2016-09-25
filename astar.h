@@ -23,7 +23,7 @@ namespace AStar {
 		}
 	};
 
-	void astar_single(vector< vector<cell*> > &Maze, cell* start, cell*goal);
+	int astar_single(vector< vector<cell*> > &Maze, cell* start, cell*goal);
 
 	void astar_checkFrontier(priority_queue <cell*, vector<cell*>, greaterEvaluation> &frontier, vector< vector<cell*> > &Maze, cell* preCell, cell* curCell);
 
