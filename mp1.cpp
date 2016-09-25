@@ -71,6 +71,7 @@ int main(int argc, char** args) {
 					curCell->start = true;
 					P = curCell;
 					curLineofCells.push_back(curCell);
+					multidots.push_back(P);
 					break;
 				default:
 					break;

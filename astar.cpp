@@ -28,7 +28,7 @@ int AStar::astar_single(vector< vector<cell*> > &Maze, cell* start, cell*goal) {
 		}
 	}
 	AStar::astar_generatePath(goal);
-	AStar::astar_printResult(Maze, start, goal);
+	// AStar::astar_printResult(Maze, start, goal);
 	return total;
 }
 
@@ -38,6 +38,7 @@ void AStar::astar_checkFrontier(priority_queue <cell*, vector<cell*>, greaterEva
 	// cout << "curCell to push to <frontier></frontier> is [" << curCell->y << ',' << curCell->x << "]\n";
 	curCell->preCell = preCell;
 	curCell->visited = true;
+	if(curCell->curChar!='*')
 	curCell->curChar = '.';
 	curCell->total_cost = preCell->total_cost + 1;
 	frontier.push(curCell);
