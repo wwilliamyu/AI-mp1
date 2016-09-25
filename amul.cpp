@@ -19,7 +19,14 @@ Amul::goal* Amul::setGoal(goal* current,cell* next,vector<cell*> goallist, vecto
 	newone->remaining=goallist;
 	newone->H=GetHeuristic(next,newone->remaining);
 	newone->G=AStar::astar_single(Maze, current->the_cell, next);
+	for (int i = 0; i<Maze.size(); i++){
+		for(int j=0; j<Maze[0].size(); j++) {
+			Maze[i][j]->visited=false;
+		}
+	}
 	newone->F=newone->H+newone->G;
+	newone->the_cell=next;
+	newone->pre=current;
 	return newone;
 }
 //
@@ -31,16 +38,22 @@ void Amul::Amul(cell* start, vector<cell*> dots, vector< vector<cell*> >& Maze){
 	current->the_cell=start;
 	current=setGoal(current,current->the_cell,dots,Maze);
 	children.push(current);
+	
+	cout<<"The goal will be "<<current->the_cell->y+1<<"\r\n";
+	cout<<"line 34\r\n";
 	while(!children.empty()){
 		// Pop the children with the lowest F, then push all of it's child with new updated Heuristic function and path cost.
 		// continue to pop until the one of them have a zero remaining goal list and the 
+		string name;
+		// std::getline (std::cin,name);
+
 		current=children.top();
 		children.pop();
-
 		if(current->remaining.empty())
 			break;
-		//remove current from the goallist
 
+
+		//remove current from the goallist
 		for (int i = 0; i < current->remaining.size(); ++i)
 		{
 			if(current->the_cell==current->remaining[i])
@@ -54,6 +67,7 @@ void Amul::Amul(cell* start, vector<cell*> dots, vector< vector<cell*> >& Maze){
 		}
 
 	}
+
 }
 
 int Amul::GetHeuristic(cell * current,vector<cell*> & goallist){

@@ -62,7 +62,7 @@ int main(int argc, char** args) {
 					curCell->curChar = '.';
 					curCell->end = true;
 					dot = curCell;
-					multidots.push_back(curCell);
+					multidots.push_back(dot);
 					cout<<"pushing in the current dot position"<<curCell->x<<"\r\n";
 					curLineofCells.push_back(curCell);
 					break;
@@ -114,7 +114,8 @@ int main(int argc, char** args) {
 			AStar::astar_single(Maze, P, dot);
 		case 'm':
 			cout<<"Runing A* Algorithm for multi dots\n";
-			// Amul::Amul(P,multidots,Maze);
+			cout<<"the starting position"<<P->x<<"\r\n";
+			Amul::Amul(P,multidots,Maze);
 			GreedySearch::greedy_printResult(Maze, P, dot);
 		default:
 			break;
