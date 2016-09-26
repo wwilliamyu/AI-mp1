@@ -113,11 +113,13 @@ int main(int argc, char** args) {
 			cout<<"Running A* Algorithm for single dot\n";
 			GreedySearch::calculate_manhattan_distance(Maze, dot);
 			AStar::astar_single(Maze, P, dot);
+			AStar::astar_printResult(Maze, P, dot);
+			break;
 		case 'm':
 			cout<<"Runing A* Algorithm for multi dots\n";
 			cout<<"the starting position"<<P->x<<"\r\n";
 			Amul::Amul(P,multidots,Maze);
-			GreedySearch::greedy_printResult(Maze, P, dot);
+			Amul::astar_printResult(Maze, P, dot);
 		default:
 			break;
 	}

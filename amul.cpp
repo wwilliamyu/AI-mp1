@@ -115,7 +115,7 @@ void Amul::Amul(cell* start, vector<cell*> dots, vector< vector<cell*> >& Maze){
 			Maze[i][j]->visited=false;
 			Maze[i][j]->preCell=NULL;
 			Maze[i][j]->total_cost=0;
-			if(Maze[i][j]->curChar=='.')
+			if(Maze[i][j]->curChar=='*')
 				Maze[i][j]->curChar=' ';
 			}
 		}
@@ -196,22 +196,23 @@ void Amul::astar_checkFrontier(priority_queue <cell*, vector<cell*>, greaterEval
 	// cout << "curCell to push to <frontier></frontier> is [" << curCell->y << ',' << curCell->x << "]\n";
 	curCell->preCell = preCell;
 	curCell->visited = true;
-	if(curCell->curChar!='*')
-	curCell->curChar = '.';
+	if(curCell->curChar!='.')
+	curCell->curChar = '*';
 	curCell->total_cost = preCell->total_cost + 1;
 	frontier.push(curCell);
 }
 
 void Amul::astar_printResult(vector< vector<cell*> > &Maze, cell* start, cell* goal) {
 	cout << "printing the output maze of A* search with path: \n";
-	goal->curChar = '*';
+	goal->curChar = '.';
+	start->curChar = 'P';
 	int pathCost = 0;
 	for (int i = 0; i<Maze.size(); i++){
 		for(int j=0; j<Maze[0].size(); j++) {
 			cell * curCell = Maze[i][j];
 			cout << curCell->curChar;
 			// cout << curCell->total_cost <<'\n';
-			if (curCell->curChar == '*')
+			if (curCell->curChar == '.')
 				pathCost++;
 		}
 		cout << '\n';
@@ -222,7 +223,7 @@ void Amul::astar_printResult(vector< vector<cell*> > &Maze, cell* start, cell* g
 void Amul::astar_generatePath(cell* goal) {
 	cell * curCell = goal;
 	while (curCell->preCell != NULL) {
-		curCell->curChar = '*';
+		curCell->curChar = '.';
 		curCell = curCell->preCell;
 	}
 }
