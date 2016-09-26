@@ -46,7 +46,7 @@ void AStar::astar_checkFrontier(priority_queue <cell*, vector<cell*>, greaterEva
 
 void AStar::astar_printResult(vector< vector<cell*> > &Maze, cell* start, cell* goal) {
 	cout << "printing the output maze of A* search with path: \n";
-	goal->curChar = '*';
+	goal->curChar = '.';
 	int pathCost = 0;
 	int expanded = 0;
 	for (int i = 0; i<Maze.size(); i++){
@@ -62,7 +62,7 @@ void AStar::astar_printResult(vector< vector<cell*> > &Maze, cell* start, cell* 
 		cout << '\n';
 	}
 	cout << "The total path cost from the starting point to reach the goal is " << pathCost << '\n';
-	cout << "The number of expanded nodes is " << expanded << ".\n";
+	cout << "The number of expanded nodes is " << expanded + pathCost << ".\n";
 }
 
 void AStar::astar_generatePath(cell* goal) {

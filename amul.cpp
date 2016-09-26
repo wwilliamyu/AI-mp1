@@ -207,6 +207,7 @@ void Amul::astar_printResult(vector< vector<cell*> > &Maze, cell* start, cell* g
 	goal->curChar = '.';
 	start->curChar = 'P';
 	int pathCost = 0;
+	int expanded = 0;
 	for (int i = 0; i<Maze.size(); i++){
 		for(int j=0; j<Maze[0].size(); j++) {
 			cell * curCell = Maze[i][j];
@@ -214,10 +215,14 @@ void Amul::astar_printResult(vector< vector<cell*> > &Maze, cell* start, cell* g
 			// cout << curCell->total_cost <<'\n';
 			if (curCell->curChar == '.')
 				pathCost++;
+			if (curCell->curChar == '*')
+				expanded++;
 		}
 		cout << '\n';
 	}
 	cout << "The total path cost from the starting point to reach the goal is " << pathCost << '\n';
+	cout << "The number of expanded nodes is " << expanded + pathCost << ".\n";
+
 }
 
 void Amul::astar_generatePath(cell* goal) {

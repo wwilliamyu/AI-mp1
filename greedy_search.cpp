@@ -75,7 +75,7 @@ int GreedySearch::greedy_printResult(vector< vector<cell*> > &Maze, cell* start,
 		cout << '\n';
 	}
 	cout << "The total path cost from the starting point to reach the goal is " << pathCost << ".\n";
-	cout << "The number of expanded nodes is " << expanded << ".\n";
+	cout << "The number of expanded nodes is " << expanded + pathCost << ".\n";
 	return pathCost;
 }
 
