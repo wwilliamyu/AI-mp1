@@ -6,7 +6,6 @@ void DepthFS::DFS(cell* start, cell* end, vector< vector<cell*> >& Maze) {
     
     stack< cell* > s;
     cell* curr;
-
     s.push(start);
 
     while (!s.empty()) {
@@ -36,7 +35,7 @@ void DepthFS::DFS(cell* start, cell* end, vector< vector<cell*> >& Maze) {
     }
     cell * curCell = end;
     while (curCell->preCell != NULL) {
-        curCell->curChar = '*';
+        curCell->curChar = '.';
         curCell = curCell->preCell;
     }
 }
@@ -46,7 +45,12 @@ void DepthFS::DFS_expand(vector< vector<cell*> >& Maze, stack<cell*>& s, cell* c
     // FOUR NODES ONLY
     if (!new_cell->wall && !new_cell->visited) {
         new_cell->preCell = curr;
-        curr->curChar = '.';
+        if (curr->start == true) {
+            curr->curChar = 'P';
+        }
+        else {
+            curr->curChar = '*';
+        }
         s.push(new_cell);
     }
     return;
