@@ -110,6 +110,7 @@ void Amul::Amul(cell* start, vector<cell*> dots, vector< vector<cell*> >& Maze){
 				Maze[i][j]->curChar=' ';
 		}
 	}
+	int number=dots.size();
 	while(next->the_cell!=start){
 		for (int i = 0; i<Maze.size(); i++){
 		for(int j=0; j<Maze[0].size(); j++) {
@@ -122,10 +123,35 @@ void Amul::Amul(cell* start, vector<cell*> dots, vector< vector<cell*> >& Maze){
 		}
 		cout<<"from the last to the first"<<next->the_cell->y+1<<"\r\n";
 		Amul::astar_single(Maze,next->pre->the_cell, next->the_cell);
-		next=next->pre;
-	}
-}
+		if(number<=10)
+		next->the_cell->curChar='0'+number-1;
+		else if (9<number&&number<=9+24)
+		next->the_cell->curChar='a'+number-1-9;
+		else
+		next->the_cell->curChar='A'+number-1-9-24;
 
+		number--;
+		next=next->pre;
+		if(number<=10)
+		next->the_cell->curChar='0'+number-1;
+		else if (9<number&&number<=9+24)
+		next->the_cell->curChar='a'+number-1-9;
+		else
+		next->the_cell->curChar='A'+number-1-9-24;
+	// while(next->the_cell!=start){
+	// 	for (int i = 0; i<Maze.size(); i++){
+	// 	for(int j=0; j<Maze[0].size(); j++) {
+	// 		Maze[i][j]->visited=false;
+	// 		Maze[i][j]->preCell=NULL;
+	// 		Maze[i][j]->total_cost=0;
+	// 		if(Maze[i][j]->curChar=='*')
+	// 			Maze[i][j]->curChar=' ';
+	// 		}
+	// 	}
+	// }
+	// cout<<"lalal"<<'{'-'0'<<"\r\n";
+}
+}
 int Amul::GetHeuristic(cell * current,vector<cell*> goallist){
 	// H(next)=min_connection_distance_between_the_untraveled_nodes;
 	// closest contains  
@@ -197,7 +223,7 @@ void Amul::astar_checkFrontier(priority_queue <cell*, vector<cell*>, greaterEval
 	// cout << "curCell to push to <frontier></frontier> is [" << curCell->y << ',' << curCell->x << "]\n";
 	curCell->preCell = preCell;
 	curCell->visited = true;
-	if(curCell->curChar!='.')
+	if(curCell->curChar==' ')
 	curCell->curChar = '*';
 	curCell->total_cost = preCell->total_cost + 1;
 	frontier.push(curCell);
@@ -205,7 +231,7 @@ void Amul::astar_checkFrontier(priority_queue <cell*, vector<cell*>, greaterEval
 
 void Amul::astar_printResult(vector< vector<cell*> > &Maze, cell* start, cell* goal) {
 	cout << "printing the output maze of A* search with path: \n";
-	goal->curChar = '.';
+	// goal->curChar = '.';
 	start->curChar = 'P';
 	int pathCost = 0;
 	for (int i = 0; i<Maze.size(); i++){
