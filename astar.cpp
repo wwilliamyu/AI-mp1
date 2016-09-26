@@ -38,8 +38,8 @@ void AStar::astar_checkFrontier(priority_queue <cell*, vector<cell*>, greaterEva
 	// cout << "curCell to push to <frontier></frontier> is [" << curCell->y << ',' << curCell->x << "]\n";
 	curCell->preCell = preCell;
 	curCell->visited = true;
-	if(curCell->curChar!='*')
-	curCell->curChar = '.';
+	if(curCell->curChar!='.')
+		curCell->curChar = '*';
 	curCell->total_cost = preCell->total_cost + 1;
 	frontier.push(curCell);
 }
@@ -48,23 +48,27 @@ void AStar::astar_printResult(vector< vector<cell*> > &Maze, cell* start, cell* 
 	cout << "printing the output maze of A* search with path: \n";
 	goal->curChar = '*';
 	int pathCost = 0;
+	int expanded = 0;
 	for (int i = 0; i<Maze.size(); i++){
 		for(int j=0; j<Maze[0].size(); j++) {
 			cell * curCell = Maze[i][j];
 			cout << curCell->curChar;
 			// cout << curCell->total_cost <<'\n';
-			if (curCell->curChar == '*')
+			if (curCell->curChar == '.')
 				pathCost++;
+			if (curCell->curChar == '*')
+				expanded++;
 		}
 		cout << '\n';
 	}
 	cout << "The total path cost from the starting point to reach the goal is " << pathCost << '\n';
+	cout << "The number of expanded nodes is " << expanded << ".\n";
 }
 
 void AStar::astar_generatePath(cell* goal) {
 	cell * curCell = goal;
 	while (curCell->preCell != NULL) {
-		curCell->curChar = '*';
+		curCell->curChar = '.';
 		curCell = curCell->preCell;
 	}
 }

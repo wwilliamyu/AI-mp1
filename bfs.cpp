@@ -6,7 +6,6 @@ void BreadthFS::BFS(cell* start, cell* end, vector< vector<cell*> >& Maze)
 {
 	queue< cell* > q;
 	cell* curr;
-
 	q.push(start);
 
 	//int count = 0;
@@ -38,9 +37,11 @@ void BreadthFS::BFS(cell* start, cell* end, vector< vector<cell*> >& Maze)
         }
         
 	}
+
+	// generate path
 	cell * curCell = end;
 	while (curCell->preCell != NULL) {
-		curCell->curChar = '*';
+		curCell->curChar = '.';
 		curCell = curCell->preCell;
 	}
 }
@@ -48,9 +49,16 @@ void BreadthFS::BFS(cell* start, cell* end, vector< vector<cell*> >& Maze)
 void BreadthFS::BFS_expand(vector< vector<cell*> >& Maze, queue<cell*>& q, cell* curr, cell* new_cell) {
 
 	// FOUR NODES ONLY
+
 	if (!new_cell->wall && !new_cell->visited) {
 		new_cell->preCell = curr;
-		curr->curChar = '.';
+		// expanded nodes
+		if (curr->start == true) {
+			curr->curChar = 'P';
+		}
+		else {
+			curr->curChar = '*';
+		}
 		q.push(new_cell);
 	}
 	return;

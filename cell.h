@@ -22,9 +22,6 @@ class cell {
 		bool start;
 		bool end;
 		cell* previous;
-		
-		// do we need this
-		// yes, to caculate the mahattan distance// Guangzhe
 
 		cell* preCell; //previous cell expanded where the current cell reached from
 		int distance;

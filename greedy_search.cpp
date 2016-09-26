@@ -42,7 +42,7 @@ void GreedySearch::greedy_checkFrontier(priority_queue <cell*, vector<cell*>, gr
 	// cout << "curCell to push to <frontier></frontier> is [" << curCell->y << ',' << curCell->x << "]\n";
 	curCell->preCell = preCell;
 	curCell->visited = true;
-	curCell->curChar = '.';
+	curCell->curChar = '*';
 	frontier.push(curCell);
 }
 
@@ -58,17 +58,19 @@ int GreedySearch::greedy_printResult(vector< vector<cell*> > &Maze, cell* start,
  //  	return;
  //  } 
 	cout << "Printing the output maze with path and expanded nodes: \n";
-	goal->curChar = '*';
+	goal->curChar = '.';
 	int pathCost = 0;
 	int expanded = 0;
 	for (int i = 0; i<Maze.size(); i++){
 		for(int j=0; j<Maze[0].size(); j++) {
 			cell * curCell = Maze[i][j];
 			cout << curCell->curChar;
-			if (curCell->curChar == '*')
+			if (curCell->curChar == '.') {
 				pathCost++;
-			if (curCell->curChar == '.')
+			}
+			if (curCell->curChar == '*') {
 				expanded++;
+			}
 		}
 		cout << '\n';
 	}
@@ -80,7 +82,7 @@ int GreedySearch::greedy_printResult(vector< vector<cell*> > &Maze, cell* start,
 void GreedySearch::greedy_generatePath(cell* goal) {
 	cell * curCell = goal;
 	while (curCell->preCell != NULL) {
-		curCell->curChar = '*';
+		curCell->curChar = '.';
 		curCell = curCell->preCell;
 	}
 }
