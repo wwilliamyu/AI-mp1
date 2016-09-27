@@ -18,8 +18,10 @@ using namespace std;
 
 namespace BreadthFS {
 
+	// actual function
 	void BFS(cell* start, cell* end, vector< vector<cell*> >& Maze);
 
+	// helper function for expansion
 	void BFS_expand(vector< vector<cell*> >& Maze, queue<cell*>& q, cell* curr, cell* new_cell);
 	
 }

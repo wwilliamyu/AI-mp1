@@ -1,0 +1,3646 @@
+pushing in the current dot position1
+pushing in the current dot position5
+pushing in the current dot position6
+pushing in the current dot position4
+pushing in the current dot position7
+pushing in the current dot position1
+pushing in the current dot position3
+pushing in the current dot position4
+pushing in the current dot position7
+pushing in the current dot position1
+pushing in the current dot position3
+pushing in the current dot position6
+pushing in the current dot position7
+The size of the maze is width x height: 9x9
+The starting coordinate is [4,4]
+The ending coordinate is [7,7]
+Runing A* Algorithm for multi dots
+the starting position4
+removing the node at5
+removing the node at5
+after removed
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is14
+distance is3
+distance is1
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=4 is:18
+line 34
+line 34
+The goal will be 5
+the current height is 5
+removing the node at2
+removing the node at5
+after removed
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is13
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is3
+The Heuristic value at y=1 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+removing the node at2
+removing the node at5
+after removed
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is13
+distance is3
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+removing the node at2
+removing the node at5
+after removed
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is13
+distance is3
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+removing the node at4
+removing the node at5
+after removed
+2
+2
+2
+4
+6
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is13
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+removing the node at4
+removing the node at5
+after removed
+2
+2
+2
+4
+6
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is13
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+removing the node at6
+removing the node at5
+after removed
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is13
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+removing the node at6
+removing the node at5
+after removed
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is13
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=5 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+removing the node at6
+removing the node at5
+after removed
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is13
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=5 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+removing the node at6
+removing the node at5
+after removed
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is13
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+removing the node at8
+removing the node at5
+after removed
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+line 29
+goal list size is13
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=7 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+removing the node at8
+removing the node at5
+after removed
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+line 29
+goal list size is13
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=7 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+removing the node at8
+removing the node at5
+after removed
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+line 29
+goal list size is13
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+removing the node at8
+removing the node at5
+after removed
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+line 29
+goal list size is13
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+6
+8
+8
+8
+8
+the current height is 6
+removing the node at2
+removing the node at6
+after removed
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is12
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is3
+The Heuristic value at y=1 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+removing the node at2
+removing the node at6
+after removed
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is12
+distance is3
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+removing the node at2
+removing the node at6
+after removed
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is12
+distance is3
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+removing the node at4
+removing the node at6
+after removed
+2
+2
+2
+4
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is12
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+removing the node at4
+removing the node at6
+after removed
+2
+2
+2
+4
+6
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is12
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+removing the node at6
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is12
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+removing the node at6
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is12
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+removing the node at6
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is12
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+removing the node at8
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+line 29
+goal list size is12
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=7 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+removing the node at8
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+line 29
+goal list size is12
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=7 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+removing the node at8
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+line 29
+goal list size is12
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+removing the node at8
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+line 29
+goal list size is12
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:18
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+6
+8
+8
+8
+8
+the current height is 6
+removing the node at2
+removing the node at6
+after removed
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is11
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is3
+The Heuristic value at y=1 is:16
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+removing the node at2
+removing the node at6
+after removed
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is11
+distance is3
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:16
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+removing the node at2
+removing the node at6
+after removed
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is11
+distance is3
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:16
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+removing the node at4
+removing the node at6
+after removed
+2
+2
+2
+4
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is11
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:16
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+removing the node at4
+removing the node at6
+after removed
+2
+2
+2
+4
+6
+6
+8
+8
+8
+8
+line 29
+goal list size is11
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:16
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+removing the node at6
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+8
+8
+8
+8
+line 29
+goal list size is11
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:16
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+removing the node at6
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+8
+8
+8
+8
+line 29
+goal list size is11
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:16
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+removing the node at8
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+line 29
+goal list size is11
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=7 is:16
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+removing the node at8
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+line 29
+goal list size is11
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=7 is:16
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+removing the node at8
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+line 29
+goal list size is11
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:16
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+removing the node at8
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+line 29
+goal list size is11
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:16
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+8
+the current height is 8
+removing the node at2
+removing the node at8
+after removed
+2
+2
+4
+4
+6
+6
+8
+8
+8
+line 29
+goal list size is10
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is3
+The Heuristic value at y=1 is:14
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+removing the node at2
+removing the node at8
+after removed
+2
+2
+4
+4
+6
+6
+8
+8
+8
+line 29
+goal list size is10
+distance is3
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:14
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+removing the node at2
+removing the node at8
+after removed
+2
+2
+4
+4
+6
+6
+8
+8
+8
+line 29
+goal list size is10
+distance is3
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:14
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+removing the node at4
+removing the node at8
+after removed
+2
+2
+2
+4
+6
+6
+8
+8
+8
+line 29
+goal list size is10
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:14
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+removing the node at4
+removing the node at8
+after removed
+2
+2
+2
+4
+6
+6
+8
+8
+8
+line 29
+goal list size is10
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:14
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+removing the node at6
+removing the node at8
+after removed
+2
+2
+2
+4
+4
+6
+8
+8
+8
+line 29
+goal list size is10
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:14
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+removing the node at6
+removing the node at8
+after removed
+2
+2
+2
+4
+4
+6
+8
+8
+8
+line 29
+goal list size is10
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:14
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+removing the node at8
+removing the node at8
+after removed
+2
+2
+2
+4
+4
+6
+6
+8
+8
+line 29
+goal list size is10
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=7 is:14
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+removing the node at8
+removing the node at8
+after removed
+2
+2
+2
+4
+4
+6
+6
+8
+8
+line 29
+goal list size is10
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:14
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+removing the node at8
+removing the node at8
+after removed
+2
+2
+2
+4
+4
+6
+6
+8
+8
+line 29
+goal list size is10
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:14
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+8
+the current height is 8
+removing the node at2
+removing the node at8
+after removed
+2
+2
+4
+4
+6
+6
+8
+8
+line 29
+goal list size is9
+distance is1
+distance is1
+distance is2
+distance is2
+distance is3
+distance is2
+distance is1
+distance is1
+distance is3
+The Heuristic value at y=1 is:13
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+removing the node at2
+removing the node at8
+after removed
+2
+2
+4
+4
+6
+6
+8
+8
+line 29
+goal list size is9
+distance is3
+distance is1
+distance is2
+distance is2
+distance is3
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:13
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+removing the node at2
+removing the node at8
+after removed
+2
+2
+4
+4
+6
+6
+8
+8
+line 29
+goal list size is9
+distance is3
+distance is1
+distance is2
+distance is2
+distance is3
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:13
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+removing the node at4
+removing the node at8
+after removed
+2
+2
+2
+4
+6
+6
+8
+8
+line 29
+goal list size is9
+distance is3
+distance is1
+distance is1
+distance is2
+distance is3
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:13
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+removing the node at4
+removing the node at8
+after removed
+2
+2
+2
+4
+6
+6
+8
+8
+line 29
+goal list size is9
+distance is3
+distance is1
+distance is1
+distance is2
+distance is3
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:13
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+removing the node at6
+removing the node at8
+after removed
+2
+2
+2
+4
+4
+6
+8
+8
+line 29
+goal list size is9
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is3
+The Heuristic value at y=5 is:13
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+removing the node at6
+removing the node at8
+after removed
+2
+2
+2
+4
+4
+6
+8
+8
+line 29
+goal list size is9
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is3
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:13
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+removing the node at8
+removing the node at8
+after removed
+2
+2
+2
+4
+4
+6
+6
+8
+line 29
+goal list size is9
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is3
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:13
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+removing the node at8
+removing the node at8
+after removed
+2
+2
+2
+4
+4
+6
+6
+8
+line 29
+goal list size is9
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is3
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:13
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+6
+8
+8
+the current height is 6
+removing the node at2
+removing the node at6
+after removed
+2
+2
+4
+4
+6
+8
+8
+line 29
+goal list size is8
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is3
+The Heuristic value at y=1 is:10
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+8
+8
+removing the node at2
+removing the node at6
+after removed
+2
+2
+4
+4
+6
+8
+8
+line 29
+goal list size is8
+distance is3
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:10
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+8
+8
+removing the node at2
+removing the node at6
+after removed
+2
+2
+4
+4
+6
+8
+8
+line 29
+goal list size is8
+distance is3
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:10
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+8
+8
+removing the node at4
+removing the node at6
+after removed
+2
+2
+2
+4
+6
+8
+8
+line 29
+goal list size is8
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:10
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+8
+8
+removing the node at4
+removing the node at6
+after removed
+2
+2
+2
+4
+6
+8
+8
+line 29
+goal list size is8
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:10
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+8
+8
+removing the node at6
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+8
+8
+line 29
+goal list size is8
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:10
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+8
+8
+removing the node at8
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+8
+line 29
+goal list size is8
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:10
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+8
+8
+removing the node at8
+removing the node at6
+after removed
+2
+2
+2
+4
+4
+6
+8
+line 29
+goal list size is8
+distance is3
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:10
+line 34
+line 34
+2
+2
+2
+4
+4
+6
+8
+8
+the current height is 2
+removing the node at2
+removing the node at2
+after removed
+2
+4
+4
+6
+8
+8
+line 29
+goal list size is7
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:8
+line 34
+line 34
+2
+2
+4
+4
+6
+8
+8
+removing the node at2
+removing the node at2
+after removed
+2
+4
+4
+6
+8
+8
+line 29
+goal list size is7
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:8
+line 34
+line 34
+2
+2
+4
+4
+6
+8
+8
+removing the node at4
+removing the node at2
+after removed
+2
+2
+4
+6
+8
+8
+line 29
+goal list size is7
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:8
+line 34
+line 34
+2
+2
+4
+4
+6
+8
+8
+removing the node at4
+removing the node at2
+after removed
+2
+2
+4
+6
+8
+8
+line 29
+goal list size is7
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:8
+line 34
+line 34
+2
+2
+4
+4
+6
+8
+8
+removing the node at6
+removing the node at2
+after removed
+2
+2
+4
+4
+8
+8
+line 29
+goal list size is7
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:8
+line 34
+line 34
+2
+2
+4
+4
+6
+8
+8
+removing the node at8
+removing the node at2
+after removed
+2
+2
+4
+4
+6
+8
+line 29
+goal list size is7
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:8
+line 34
+line 34
+2
+2
+4
+4
+6
+8
+8
+removing the node at8
+removing the node at2
+after removed
+2
+2
+4
+4
+6
+8
+line 29
+goal list size is7
+distance is1
+distance is1
+distance is2
+distance is2
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:8
+line 34
+line 34
+2
+2
+4
+4
+6
+8
+8
+the current height is 4
+removing the node at2
+removing the node at4
+after removed
+2
+4
+6
+8
+8
+line 29
+goal list size is6
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:6
+line 34
+line 34
+2
+2
+4
+6
+8
+8
+removing the node at2
+removing the node at4
+after removed
+2
+4
+6
+8
+8
+line 29
+goal list size is6
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:6
+line 34
+line 34
+2
+2
+4
+6
+8
+8
+removing the node at4
+removing the node at4
+after removed
+2
+2
+6
+8
+8
+line 29
+goal list size is6
+distance is1
+distance is1
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=3 is:6
+line 34
+line 34
+2
+2
+4
+6
+8
+8
+removing the node at6
+removing the node at4
+after removed
+2
+2
+4
+8
+8
+line 29
+goal list size is6
+distance is1
+distance is1
+distance is2
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:6
+line 34
+line 34
+2
+2
+4
+6
+8
+8
+removing the node at8
+removing the node at4
+after removed
+2
+2
+4
+6
+8
+line 29
+goal list size is6
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:6
+line 34
+line 34
+2
+2
+4
+6
+8
+8
+removing the node at8
+removing the node at4
+after removed
+2
+2
+4
+6
+8
+line 29
+goal list size is6
+distance is1
+distance is1
+distance is2
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:6
+line 34
+line 34
+2
+2
+4
+6
+8
+8
+the current height is 4
+removing the node at2
+removing the node at4
+after removed
+2
+6
+8
+8
+line 29
+goal list size is5
+distance is1
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:4
+line 34
+line 34
+2
+2
+6
+8
+8
+removing the node at2
+removing the node at4
+after removed
+2
+6
+8
+8
+line 29
+goal list size is5
+distance is1
+distance is2
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:4
+line 34
+line 34
+2
+2
+6
+8
+8
+removing the node at6
+removing the node at4
+after removed
+2
+2
+8
+8
+line 29
+goal list size is5
+distance is1
+distance is1
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:4
+line 34
+line 34
+2
+2
+6
+8
+8
+removing the node at8
+removing the node at4
+after removed
+2
+2
+6
+8
+line 29
+goal list size is5
+distance is1
+distance is1
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:4
+line 34
+line 34
+2
+2
+6
+8
+8
+removing the node at8
+removing the node at4
+after removed
+2
+2
+6
+8
+line 29
+goal list size is5
+distance is1
+distance is1
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:4
+line 34
+line 34
+2
+2
+6
+8
+8
+the current height is 6
+removing the node at2
+removing the node at6
+after removed
+2
+8
+8
+line 29
+goal list size is4
+distance is1
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:3
+line 34
+line 34
+2
+2
+8
+8
+removing the node at2
+removing the node at6
+after removed
+2
+8
+8
+line 29
+goal list size is4
+distance is1
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=1 is:3
+line 34
+line 34
+2
+2
+8
+8
+removing the node at8
+removing the node at6
+after removed
+2
+2
+8
+line 29
+goal list size is4
+distance is1
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=7 is:3
+line 34
+line 34
+2
+2
+8
+8
+removing the node at8
+removing the node at6
+after removed
+2
+2
+8
+line 29
+goal list size is4
+distance is1
+distance is1
+distance is1
+distance is1
+The Heuristic value at y=7 is:3
+line 34
+line 34
+2
+2
+8
+8
+the current height is 2
+removing the node at2
+removing the node at2
+after removed
+6
+8
+8
+line 29
+goal list size is4
+distance is2
+distance is1
+distance is1
+distance is4
+The Heuristic value at y=1 is:4
+line 34
+line 34
+2
+6
+8
+8
+removing the node at6
+removing the node at2
+after removed
+2
+8
+8
+line 29
+goal list size is4
+distance is4
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:4
+line 34
+line 34
+2
+6
+8
+8
+removing the node at8
+removing the node at2
+after removed
+2
+6
+8
+line 29
+goal list size is4
+distance is4
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:4
+line 34
+line 34
+2
+6
+8
+8
+removing the node at8
+removing the node at2
+after removed
+2
+6
+8
+line 29
+goal list size is4
+distance is4
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:4
+line 34
+line 34
+2
+6
+8
+8
+the current height is 2
+removing the node at6
+removing the node at2
+after removed
+8
+8
+line 29
+goal list size is3
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:2
+line 34
+line 34
+6
+8
+8
+removing the node at8
+removing the node at2
+after removed
+6
+8
+line 29
+goal list size is3
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:2
+line 34
+line 34
+6
+8
+8
+removing the node at8
+removing the node at2
+after removed
+6
+8
+line 29
+goal list size is3
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:2
+line 34
+line 34
+6
+8
+8
+the current height is 6
+removing the node at8
+removing the node at6
+after removed
+8
+line 29
+goal list size is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:1
+line 34
+line 34
+8
+8
+removing the node at8
+removing the node at6
+after removed
+8
+line 29
+goal list size is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:1
+line 34
+line 34
+8
+8
+the current height is 2
+removing the node at2
+removing the node at2
+after removed
+8
+8
+line 29
+goal list size is3
+distance is1
+distance is1
+distance is6
+The Heuristic value at y=1 is:2
+line 34
+line 34
+2
+8
+8
+removing the node at8
+removing the node at2
+after removed
+2
+8
+line 29
+goal list size is3
+distance is6
+distance is1
+distance is1
+The Heuristic value at y=7 is:2
+line 34
+line 34
+2
+8
+8
+removing the node at8
+removing the node at2
+after removed
+2
+8
+line 29
+goal list size is3
+distance is6
+distance is1
+distance is1
+The Heuristic value at y=7 is:2
+line 34
+line 34
+2
+8
+8
+the current height is 2
+removing the node at8
+removing the node at2
+after removed
+8
+line 29
+goal list size is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:1
+line 34
+line 34
+8
+8
+removing the node at8
+removing the node at2
+after removed
+8
+line 29
+goal list size is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:1
+line 34
+line 34
+8
+8
+the current height is 2
+removing the node at2
+removing the node at2
+after removed
+6
+8
+8
+line 29
+goal list size is4
+distance is2
+distance is1
+distance is1
+distance is4
+The Heuristic value at y=1 is:4
+line 34
+line 34
+2
+6
+8
+8
+removing the node at6
+removing the node at2
+after removed
+2
+8
+8
+line 29
+goal list size is4
+distance is4
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:4
+line 34
+line 34
+2
+6
+8
+8
+removing the node at8
+removing the node at2
+after removed
+2
+6
+8
+line 29
+goal list size is4
+distance is4
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:4
+line 34
+line 34
+2
+6
+8
+8
+removing the node at8
+removing the node at2
+after removed
+2
+6
+8
+line 29
+goal list size is4
+distance is4
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:4
+line 34
+line 34
+2
+6
+8
+8
+the current height is 2
+removing the node at6
+removing the node at2
+after removed
+8
+8
+line 29
+goal list size is3
+distance is1
+distance is1
+distance is2
+The Heuristic value at y=5 is:2
+line 34
+line 34
+6
+8
+8
+removing the node at8
+removing the node at2
+after removed
+6
+8
+line 29
+goal list size is3
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:2
+line 34
+line 34
+6
+8
+8
+removing the node at8
+removing the node at2
+after removed
+6
+8
+line 29
+goal list size is3
+distance is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:2
+line 34
+line 34
+6
+8
+8
+the current height is 6
+removing the node at8
+removing the node at6
+after removed
+8
+line 29
+goal list size is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:1
+line 34
+line 34
+8
+8
+removing the node at8
+removing the node at6
+after removed
+8
+line 29
+goal list size is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:1
+line 34
+line 34
+8
+8
+the current height is 6
+removing the node at2
+removing the node at6
+after removed
+8
+8
+line 29
+goal list size is3
+distance is1
+distance is1
+distance is6
+The Heuristic value at y=1 is:2
+line 34
+line 34
+2
+8
+8
+removing the node at8
+removing the node at6
+after removed
+2
+8
+line 29
+goal list size is3
+distance is6
+distance is1
+distance is1
+The Heuristic value at y=7 is:2
+line 34
+line 34
+2
+8
+8
+removing the node at8
+removing the node at6
+after removed
+2
+8
+line 29
+goal list size is3
+distance is6
+distance is1
+distance is1
+The Heuristic value at y=7 is:2
+line 34
+line 34
+2
+8
+8
+the current height is 2
+removing the node at8
+removing the node at2
+after removed
+8
+line 29
+goal list size is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:1
+line 34
+line 34
+8
+8
+removing the node at8
+removing the node at2
+after removed
+8
+line 29
+goal list size is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:1
+line 34
+line 34
+8
+8
+the current height is 2
+removing the node at2
+removing the node at2
+after removed
+8
+8
+line 29
+goal list size is3
+distance is1
+distance is1
+distance is6
+The Heuristic value at y=1 is:2
+line 34
+line 34
+2
+8
+8
+removing the node at8
+removing the node at2
+after removed
+2
+8
+line 29
+goal list size is3
+distance is6
+distance is1
+distance is1
+The Heuristic value at y=7 is:2
+line 34
+line 34
+2
+8
+8
+removing the node at8
+removing the node at2
+after removed
+2
+8
+line 29
+goal list size is3
+distance is6
+distance is1
+distance is1
+The Heuristic value at y=7 is:2
+line 34
+line 34
+2
+8
+8
+the current height is 2
+removing the node at8
+removing the node at2
+after removed
+8
+line 29
+goal list size is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:1
+line 34
+line 34
+8
+8
+removing the node at8
+removing the node at2
+after removed
+8
+line 29
+goal list size is2
+distance is1
+distance is1
+The Heuristic value at y=7 is:1
+line 34
+line 34
+8
+8
+the current height is 8
+removing the node at8
+removing the node at8
+after removed
+line 29
+goal list size is1
+distance is2147483647
+The Heuristic value at y=7 is:0
+line 34
+line 34
+8
+the current height is 8
+from the last to the first8
+from the last to the first8
+from the last to the first6
+from the last to the first2
+from the last to the first2
+from the last to the first4
+from the last to the first4
+from the last to the first2
+from the last to the first6
+from the last to the first8
+from the last to the first8
+from the last to the first6
+from the last to the first6
+printing the output maze of A* search with path: 
+%%%%%%%%%
+%6..%9..%
+%.%.%%%.%
+%.%.7..8%
+%.%%P%%.%
+%5 21..c%
+%.%.%%%%%
+%4.3..de%
+%%%%%%%%%
+The total path cost from the starting point to reach the goal is 20
+The number of expanded nodes is 20.
+Cleaning up the memory

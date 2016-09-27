@@ -4,11 +4,13 @@ using namespace std;
 
 void DepthFS::DFS(cell* start, cell* end, vector< vector<cell*> >& Maze) {
     
+    // initialize
     stack< cell* > s;
     cell* curr;
     s.push(start);
 
     while (!s.empty()) {
+        // grab top of stack
         curr = s.top();
         s.pop();
         if (curr == end) {
@@ -16,6 +18,7 @@ void DepthFS::DFS(cell* start, cell* end, vector< vector<cell*> >& Maze) {
             // at goal
         }
 
+        // expand on four neighboring nodes
         if (!curr->visited) {
 
             curr->visited = true;
@@ -33,6 +36,7 @@ void DepthFS::DFS(cell* start, cell* end, vector< vector<cell*> >& Maze) {
             }
         }
     }
+    // generate path
     cell * curCell = end;
     while (curCell->preCell != NULL) {
         curCell->curChar = '.';
@@ -42,7 +46,7 @@ void DepthFS::DFS(cell* start, cell* end, vector< vector<cell*> >& Maze) {
 
 void DepthFS::DFS_expand(vector< vector<cell*> >& Maze, stack<cell*>& s, cell* curr, cell* new_cell) {
 
-    // FOUR NODES ONLY
+    // FOUR NODES ONLY, expand on this node if not wall or not visited before
     if (!new_cell->wall && !new_cell->visited) {
         new_cell->preCell = curr;
         if (curr->start == true) {

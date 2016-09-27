@@ -18,8 +18,10 @@ using namespace std;
 
 namespace DepthFS {
 
+	//actual function
 	void DFS(cell* start, cell* end, vector< vector<cell*> >& Maze);
 
+	// helper function for expansion
 	void DFS_expand(vector< vector<cell*> >& Maze, stack<cell*>& s, cell* curr, cell* new_cell);
 	
 }

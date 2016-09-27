@@ -27,6 +27,8 @@ using namespace std;
 * args[2] = the file we want to operate on
 */
 int main(int argc, char** args) {
+
+	// error if bad command
 	if (argc != 3) {
  		cout << "Wrong input format. ./mp1 [algorithm] [input file path]. algorithm options are d,b,g,a, A\n";
 		return 1; 
@@ -38,6 +40,8 @@ int main(int argc, char** args) {
 	cell * dot;
 	string line;
 	int row = 0;
+
+	// the code that is responsible for constructing the maze properly
 	while (getline(mazefile, line)) {
 		if (line.size() == 1)
 			continue;

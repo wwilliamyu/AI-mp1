@@ -4,21 +4,24 @@ using namespace std;
 
 void BreadthFS::BFS(cell* start, cell* end, vector< vector<cell*> >& Maze)
 {
+	// initialize
 	queue< cell* > q;
 	cell* curr;
 	q.push(start);
 
 	//int count = 0;
 	while (!q.empty()) {
+		// grab top of queue
 		curr = q.front();
 		q.pop();
 
+		// if end, break while loop
 		if (curr == end) {
 			break;
 			// at goal
 		}
 
-        
+        // expand the four neighbors of each node
 		if (!curr->visited) {
 
             curr->visited = true;
@@ -49,7 +52,7 @@ void BreadthFS::BFS(cell* start, cell* end, vector< vector<cell*> >& Maze)
 void BreadthFS::BFS_expand(vector< vector<cell*> >& Maze, queue<cell*>& q, cell* curr, cell* new_cell) {
 
 	// FOUR NODES ONLY
-
+	// if traversible, push new node onto the frontier
 	if (!new_cell->wall && !new_cell->visited) {
 		new_cell->preCell = curr;
 		// expanded nodes
