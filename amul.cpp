@@ -63,6 +63,7 @@ Amul::goal* Amul::setGoal(goal* current,cell* next,vector<cell*> goallist, vecto
 //
 void Amul::Amul(cell* start, vector<cell*> dots, vector< vector<cell*> >& Maze){
 
+	// the main A* multiple dot function that sets to priority queue 
 	priority_queue <goal* ,vector<goal*>, greater> children;
 	vector<goal*> goalist;
 	goal * current=new goal;
@@ -123,6 +124,9 @@ void Amul::Amul(cell* start, vector<cell*> dots, vector< vector<cell*> >& Maze){
 		}
 		cout<<"from the last to the first"<<next->the_cell->y+1<<"\r\n";
 		Amul::astar_single(Maze,next->pre->the_cell, next->the_cell);
+
+		// numbering the dots for displaying in report
+
 		if(number<=10)
 		next->the_cell->curChar='0'+number-1;
 		else if (9<number&&number<=9+24)
@@ -153,6 +157,9 @@ void Amul::Amul(cell* start, vector<cell*> dots, vector< vector<cell*> >& Maze){
 }
 }
 int Amul::GetHeuristic(cell * current,vector<cell*> goallist){
+
+	// Use minimum connection distance between nodes as heuristic function
+
 	// H(next)=min_connection_distance_between_the_untraveled_nodes;
 	// closest contains  
 	int Heuristic;
@@ -183,12 +190,14 @@ int Amul::GetHeuristic(cell * current,vector<cell*> goallist){
 }
 
 int  Amul::MDistance(cell* a, cell* b){
+	// grab distance between nodes
 	return sqrt(pow(a->x - b->x, 2) + pow(a->y - b->y, 2));
 }
 
 
 
 int Amul::astar_single(vector< vector<cell*> > &Maze, cell* start, cell*goal) {
+	// apply the single A* algorithm, utilized in multiple dot algorithm
 	cell * curCell;
 	int total=0;
 	priority_queue <cell*, vector<cell*>, greaterEvaluation> frontier;

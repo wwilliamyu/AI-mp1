@@ -6,13 +6,17 @@ using namespace std;
 int AStar::astar_single(vector< vector<cell*> > &Maze, cell* start, cell*goal) {
 	cell * curCell;
 	int total=0;
+	// initialize priority queue
 	priority_queue <cell*, vector<cell*>, greaterEvaluation> frontier;
 	start->visited = true;
 	start->total_cost = 0;
 	frontier.push(start);
+	// make sure pqueue is not empty
 	while (!frontier.empty()){
 		curCell = frontier.top();
 		frontier.pop();
+
+		// expand among the four neighbors
 		if (curCell->x + 1 < Maze[0].size()) //if not at the right border, go right
 			AStar::astar_checkFrontier(frontier, Maze, curCell, Maze[curCell->y][curCell->x + 1]);
 		if (curCell->y + 1 < Maze.size()) //if not at the bottom border, the go down
@@ -61,6 +65,7 @@ void AStar::astar_printResult(vector< vector<cell*> > &Maze, cell* start, cell* 
 		}
 		cout << '\n';
 	}
+	// print out the results on command line
 	cout << "The total path cost from the starting point to reach the goal is " << pathCost << '\n';
 	cout << "The number of expanded nodes is " << expanded + pathCost << ".\n";
 }
